@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Title</title>
+    <meta name="description" content="Your positioning statement here.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Your Name - Title">
+    <meta property="og:description" content="Your positioning statement here.">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Hi, I'm [Your Name]</h1>
+        <p class="positioning">[Your positioning - what you do and for whom]</p>
+        <nav>
+            <a href="#work">Work</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="work">
+            <h2>Work</h2>
+            <!-- Add your projects/case studies here -->
+            <div class="work-item">
+                <h3>Project Title</h3>
+                <p>Brief description of what you did and the outcome.</p>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About</h2>
+            <p>[Your story - who you are, what drives you, what you're looking for]</p>
+        </section>
+
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <p>
+                <a href="mailto:your@email.com">Email</a> ·
+                <a href="https://linkedin.com/in/yourprofile">LinkedIn</a> ·
+                <a href="https://github.com/yourhandle">GitHub</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Your Name</p>
+    </footer>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

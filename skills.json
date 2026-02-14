@@ -1,0 +1,74 @@
+[
+  {
+    "name": "anonymizer",
+    "description": "Anonymize work content. Scans for sensitive elements per area (employer/client/project/metrics) and asks user preference for each.",
+    "type": "builder",
+    "version": "1.0.0"
+  },
+  {
+    "name": "config",
+    "description": "First-run setup wizard. Configures CLAUDE.md with identity and contact info.",
+    "type": "builder",
+    "version": "1.0.0"
+  },
+  {
+    "name": "content-strategist",
+    "description": "Entry point for adding portfolio content. Decides what goes where (portfolio, LinkedIn, article) and routes to appropriate skills.",
+    "type": "builder",
+    "version": "1.0.0"
+  },
+  {
+    "name": "portfolio-copywriter",
+    "description": "Write and improve portfolio website copy - hero, about, contact, project showcases. Focus on clarity, impact, and conversion.",
+    "type": "builder",
+    "version": "1.0.0"
+  },
+  {
+    "name": "quality-check",
+    "description": "Final gate before publishing. Verifies all specialist skills have run and passed. Orchestrates, doesn't duplicate.",
+    "type": "evaluator",
+    "version": "1.0.0"
+  },
+  {
+    "name": "skill-improver-builder",
+    "description": "Meta-skill to improve builder skills. Focuses on process, handoffs, user interaction.",
+    "type": "meta",
+    "version": "1.0.0"
+  },
+  {
+    "name": "skill-improver-evaluator",
+    "description": "Meta-skill to improve evaluator skills. Focuses on grading, output format, criteria consistency.",
+    "type": "meta",
+    "version": "1.0.0"
+  },
+  {
+    "name": "story-adapter",
+    "description": "Transform work experiences into anonymized portfolio content. Use for case studies, highlights, achievements, and any work-related content.",
+    "type": "builder",
+    "version": "1.0.0"
+  },
+  {
+    "name": "update",
+    "description": "Check for and install new or updated skills from the upstream kit.",
+    "type": "builder",
+    "version": "1.0.0"
+  },
+  {
+    "name": "voice-guardian",
+    "description": "Review content for voice and tone. Catches corporate speak, ensures authentic voice matching your profile.",
+    "type": "evaluator",
+    "version": "1.0.0"
+  },
+  {
+    "name": "web-content-optimizer",
+    "description": "Optimize content for web delivery - SEO, readability, images, mobile UX, performance. Makes content perform well, not just read well.",
+    "type": "evaluator",
+    "version": "1.0.0"
+  },
+  {
+    "name": "website-expert",
+    "description": "Technical and design expert for the portfolio site. Explores codebase, implements changes, optimizes code, knows modern web best practices.",
+    "type": "builder",
+    "version": "1.0.0"
+  }
+]

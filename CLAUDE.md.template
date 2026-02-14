@@ -1,0 +1,43 @@
+# Portfolio
+
+**Owner:** {{NAME}}
+**Role:** {{TITLE}}
+
+## Contact
+
+- Email: {{EMAIL}}
+- LinkedIn: {{LINKEDIN}}
+- GitHub: {{GITHUB}}
+
+## Skill Routing
+
+Custom skills live in `.claude/skills/`. Invoke with `/skill-name`.
+
+| Task | Skill |
+|------|-------|
+| First-time setup | `/config` |
+| Add content | `/content-strategist` |
+| Write copy | `/portfolio-copywriter` |
+| Work stories | `/story-adapter` |
+| Anonymize work content | `/anonymizer` |
+| Technical/design | `/website-expert` |
+| Voice & tone check | `/voice-guardian` |
+| SEO & performance | `/web-content-optimizer` |
+| Final gate | `/quality-check` |
+
+## Voice Profile
+
+- Style: {{VOICE_PROFILE}}
+
+## Source Material
+
+- Resume: {{RESUME_PATH}}
+- Notes: {{NOTES_PATH}}
+- LinkedIn: {{LINKEDIN_EXPORT}}
+
+## Guidelines
+
+- Content first, design later
+- Authentic voice matching your profile — show what you've done
+- Less maintained > more stale
+- **Skill transparency:** ALWAYS announce which skill is being invoked, even within the same conversation. Say "Using `/skill-name`..." before invoking.
