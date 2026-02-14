@@ -29,19 +29,7 @@
     "type": "evaluator",
     "version": "1.0.0"
   },
-  {
-    "name": "skill-improver-builder",
-    "description": "Meta-skill to improve builder skills. Focuses on process, handoffs, user interaction.",
-    "type": "meta",
-    "version": "1.0.0"
-  },
-  {
-    "name": "skill-improver-evaluator",
-    "description": "Meta-skill to improve evaluator skills. Focuses on grading, output format, criteria consistency.",
-    "type": "meta",
-    "version": "1.0.0"
-  },
-  {
+{
     "name": "story-adapter",
     "description": "Transform work experiences into anonymized portfolio content. Use for case studies, highlights, achievements, and any work-related content.",
     "type": "builder",

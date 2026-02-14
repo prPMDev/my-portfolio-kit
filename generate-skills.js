@@ -30,9 +30,6 @@ const SKILL_TYPES = {
     'voice-guardian': 'evaluator',
     'web-content-optimizer': 'evaluator',
     'quality-check': 'evaluator',
-    // Meta skills - improve skills
-    'skill-improver-builder': 'meta',
-    'skill-improver-evaluator': 'meta',
 };
 
 function parseFrontmatter(content) {
