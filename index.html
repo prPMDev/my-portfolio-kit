@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VS1PHJX1YL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-VS1PHJX1YL');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio Kit - Learn to Build with AI</title>
+    <meta name="description" content="Learn to build with AI. Ship a portfolio along the way. Not a template. Not magic. You do the work — AI helps you move.">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="My Portfolio Kit">
+    <meta property="og:description" content="Your story is more than a bullet point. Tell it your way.">
+    <meta property="og:url" content="https://prpmdev.github.io/my-portfolio-kit/">
+    <meta property="og:image" content="https://prpmdev.github.io/my-portfolio-kit/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="My Portfolio Kit">
+    <meta name="twitter:description" content="Your story is more than a bullet point. Tell it your way.">
+    <meta name="twitter:image" content="https://prpmdev.github.io/my-portfolio-kit/og-image.png">
+
+    <link rel="stylesheet" href="landing.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <!-- Terminal Demo (left side) -->
+            <div class="hero-media">
+                <div class="terminal-demo">
+                    <div class="terminal-header">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+                        <span class="terminal-title">claude</span>
+                    </div>
+                    <div class="terminal-body" id="terminal-content">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content (right side) -->
+            <div class="hero-content">
+                <h1>My Portfolio Kit</h1>
+                <p>Build a portfolio. Learn along the way.</p>
+                <p>Not a template. Not magic. You do the work — AI helps you move.</p>
+
+                <p class="hero-pitch">Not Lovable. Not Replit. Their agents, their directives.<br>
+                <em>Your</em> skills. You control what they do.</p>
+
+                <p class="hero-flow">Setup → Adapt stories → Anonymize → Write copy → Check voice → Optimize → Publish</p>
+
+                <p class="hero-branding">Built by <a href="https://prpmdev.github.io/prashant-rana/">a PM who doesn't abandon ship after shipping</a>.</p>
+
+                <div class="cta-buttons">
+                    <a href="#quick-start" class="btn btn-primary" onclick="gtag('event', 'click', {event_category: 'CTA', event_label: 'Get Started'})">Get Started</a>
+                    <a href="https://github.com/prpmdev/my-portfolio-kit" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'click', {event_category: 'CTA', event_label: 'Star on GitHub'})">★ GitHub</a>
+                    <a href="https://www.linkedin.com/in/prashant-rana/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'click', {event_category: 'CTA', event_label: 'LinkedIn'})">Message</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Catalog -->
+        <section id="skills" class="skills">
+            <h2>Skills <span id="skill-count"></span></h2>
+            <div class="skills-legend">
+                <span class="legend-item"><span class="legend-dot builder"></span> Builder — creates or transforms</span>
+                <span class="legend-item"><span class="legend-dot evaluator"></span> Evaluator — reviews and grades</span>
+            </div>
+            <div id="skills-grid" class="skills-grid">
+                <!-- Populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Quick Start -->
+        <section id="quick-start" class="quick-start">
+            <h2>Quick Start</h2>
+            <p class="quick-start-intro"><a href="#" class="workflow-link" onclick="showWorkflow(); return false;">See suggested workflow</a> or dive right in:</p>
+
+            <!-- Setup Tabs - Full Width -->
+            <div class="setup-tabs">
+                <button class="setup-tab active" onclick="switchSetupTab('desktop', this)">Desktop</button>
+                <button class="setup-tab" onclick="switchSetupTab('terminal', this)">Terminal</button>
+            </div>
+
+            <!-- Two Column Layout: Steps + Prerequisites -->
+            <div class="quick-start-layout">
+                <!-- Steps (left side) -->
+                <div class="quick-start-steps">
+                    <!-- Desktop Steps (default) -->
+                    <div id="setup-desktop" class="setup-content active">
+                        <div class="steps">
+                            <div class="step">
+                                <span class="step-number">1</span>
+                                <div class="step-content">
+                                    <h3>Get the kit</h3>
+                                    <p><a href="https://github.com/prpmdev/my-portfolio-kit/archive/refs/heads/main.zip" target="_blank" rel="noopener noreferrer">Download ZIP</a> — no account needed</p>
+                                    <p class="step-alt">Have GitHub? <a href="https://github.com/prpmdev/my-portfolio-kit/fork" target="_blank" rel="noopener noreferrer">Fork</a> · <a href="https://github.com/prpmdev/my-portfolio-kit/generate" target="_blank" rel="noopener noreferrer">Use template</a> (skip to step 3)</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">2</span>
+                                <div class="step-content">
+                                    <h3>Extract and rename</h3>
+                                    <p>Unzip. Rename folder to <code>my-portfolio</code> (or your name).</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">3</span>
+                                <div class="step-content">
+                                    <h3>Open in Claude Desktop</h3>
+                                    <p>Open the folder. Skills load automatically.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">4</span>
+                                <div class="step-content">
+                                    <h3>Run setup</h3>
+                                    <pre><code>/config</code></pre>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">5</span>
+                                <div class="step-content">
+                                    <h3>Start building</h3>
+                                    <pre><code>/content-strategist</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Terminal Steps -->
+                    <div id="setup-terminal" class="setup-content">
+                        <div class="steps">
+                            <div class="step">
+                                <span class="step-number">1</span>
+                                <div class="step-content">
+                                    <h3>Get the kit</h3>
+                                    <pre><code>git clone https://github.com/prpmdev/my-portfolio-kit.git my-portfolio
+cd my-portfolio</code></pre>
+                                    <p class="step-alt">Or: <a href="https://github.com/prpmdev/my-portfolio-kit/fork" target="_blank" rel="noopener noreferrer">Fork</a> · <a href="https://github.com/prpmdev/my-portfolio-kit/generate" target="_blank" rel="noopener noreferrer">Use template</a> — then clone your copy</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">2</span>
+                                <div class="step-content">
+                                    <h3>Run setup</h3>
+                                    <pre><code>claude
+/config</code></pre>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">3</span>
+                                <div class="step-content">
+                                    <h3>Start building</h3>
+                                    <pre><code>/content-strategist</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prerequisites (right side) -->
+                <aside class="prerequisites">
+                    <p><strong>What you need</strong></p>
+                    <ul>
+                        <li><a href="https://claude.ai/pricing" target="_blank" rel="noopener noreferrer">Claude Pro</a> ($20/month or higher)</li>
+                        <li id="prereq-install"><a href="https://claude.ai/download" target="_blank" rel="noopener noreferrer">Claude Desktop app</a></li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Feedback Section -->
+        <section id="feedback" class="feedback-section">
+            <p>Found a bug or have ideas? <a href="https://github.com/prpmdev/my-portfolio-kit/issues" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'click', {event_category: 'Feedback', event_label: 'GitHub Issues'})">Open an issue</a> — I actually want to hear it.</p>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p class="footer-copyright">&copy; <span id="year"></span> <a href="https://prpmdev.github.io/prashant-rana/">Prashant Rana</a></p>
+        </footer>
+    </main>
+
+    <script src="landing.js"></script>
+
+    <!-- Workflow Modal -->
+    <div id="workflow-modal" class="modal" onclick="closeWorkflow(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeWorkflow()">&times;</button>
+            <h3>Suggested Workflow</h3>
+            <p class="modal-subtitle">First portfolio? Follow this path.</p>
+            <div class="workflow-diagram">
+                <div class="workflow-step">
+                    <div class="workflow-box builder">/config</div>
+                    <span class="workflow-label">one-time setup</span>
+                    <span class="workflow-arrow">↓</span>
+                </div>
+                <div class="workflow-loop">
+                    <div class="loop-bracket"></div>
+                    <div class="loop-content">
+                        <div class="workflow-step">
+                            <div class="workflow-box builder">/content-strategist</div>
+                            <span class="workflow-arrow">↓</span>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="workflow-box builder">/story-adapter</div>
+                            <span class="workflow-arrow">↓</span>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="workflow-box both">/anonymizer</div>
+                            <span class="workflow-label">if needed</span>
+                            <span class="workflow-arrow">↓</span>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="workflow-box builder">/portfolio-copywriter</div>
+                            <span class="workflow-arrow">↓</span>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="workflow-box builder">/website-expert</div>
+                            <span class="workflow-arrow">↓</span>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="workflow-box evaluator">/voice-guardian</div>
+                            <span class="workflow-arrow">↓</span>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="workflow-box evaluator">/web-content-optimizer</div>
+                            <span class="workflow-arrow">↓</span>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="workflow-box evaluator">/quality-check</div>
+                            <span class="workflow-label">publish</span>
+                        </div>
+                    </div>
+                    <span class="loop-label">repeat for<br>new content</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

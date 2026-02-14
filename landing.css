@@ -1,0 +1,877 @@
+/* Base Styles - Matching Portfolio */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f0f0f0;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.hero-media {
+    flex-shrink: 0;
+    width: 40%;
+    min-width: 280px;
+    max-width: 450px;
+}
+
+.hero-content {
+    flex-grow: 1;
+}
+
+.hero h1 {
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.hero-content > p {
+    margin: 0 0 8px 0;
+}
+
+.hero-pitch {
+    font-size: 0.9em;
+    color: #555;
+    margin: 10px 0 8px 0;
+    line-height: 1.5;
+}
+
+.hero-pitch em {
+    font-style: normal;
+    font-weight: 600;
+    color: #333;
+}
+
+.hero-flow {
+    font-size: 0.8em;
+    color: #888;
+    font-family: 'Consolas', 'Monaco', monospace;
+    margin: 0 0 10px 0;
+}
+
+.hero .hero-branding {
+    font-size: 0.85em;
+    color: #666;
+    font-style: italic;
+    margin: 10px 0;
+}
+
+.hero .hero-branding a {
+    color: #666;
+    text-decoration: underline;
+}
+
+.hero .hero-branding a:hover {
+    color: #333;
+}
+
+.cta-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 10px 0 0 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 0.95em;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: #333;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #555;
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #333;
+    border: 2px solid #333;
+}
+
+.btn-secondary:hover {
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Terminal Demo */
+.terminal-demo {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.8em;
+    line-height: 1.5;
+}
+
+.terminal-header {
+    background-color: #333;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.terminal-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.terminal-dot.red { background-color: #ff5f56; }
+.terminal-dot.yellow { background-color: #ffbd2e; }
+.terminal-dot.green { background-color: #27ca40; }
+
+.terminal-title {
+    color: #888;
+    font-size: 0.85em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.terminal-body {
+    padding: 15px;
+    height: 280px;
+    max-height: 280px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    transition: opacity 0.5s ease;
+}
+
+.terminal-body.resetting {
+    opacity: 0;
+}
+
+.terminal-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.terminal-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.terminal-body::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 3px;
+}
+
+.terminal-line {
+    margin-bottom: 6px;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.terminal-line.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.terminal-line.spacer {
+    height: 12px;
+}
+
+.terminal-line.user {
+    color: #98c379;
+}
+
+.terminal-line.user::before {
+    content: "› ";
+    color: #888;
+}
+
+.terminal-line.system {
+    color: #888;
+    font-style: italic;
+}
+
+.terminal-line.response {
+    color: #ccc;
+    padding-left: 8px;
+}
+
+.terminal-line .skill {
+    color: #6bdfff;
+}
+
+.terminal-line .success {
+    color: #98c379;
+}
+
+/* Skills Section */
+.skills {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.skills h2 {
+    text-align: center;
+    font-size: 1.4em;
+    margin-bottom: 8px;
+}
+
+#skill-count {
+    font-weight: normal;
+    color: #666;
+}
+
+.skills-legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8em;
+    color: #666;
+}
+
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.legend-dot.builder {
+    background-color: #2e7d32;
+}
+
+.legend-dot.evaluator {
+    background-color: #1565c0;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 12px;
+}
+
+.skill-card {
+    background-color: #f8f8f8;
+    padding: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border: 1px solid #eee;
+}
+
+.skill-card:hover {
+    background-color: #f0f0f0;
+}
+
+.skill-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.skill-title-row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.skill-display-name {
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+}
+
+.skill-slash-name {
+    font-size: 0.85em;
+    font-family: 'Consolas', 'Monaco', monospace;
+    color: #888;
+}
+
+.skill-type-row {
+    margin-bottom: 8px;
+}
+
+.skill-card .expand-icon {
+    font-size: 0.75em;
+    color: #999;
+    transition: transform 0.2s ease;
+}
+
+.skill-card.expanded .expand-icon {
+    transform: rotate(90deg);
+}
+
+.skill-card .skill-type {
+    font-size: 0.65em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    margin-right: 6px;
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.skill-card .skill-type.builder {
+    color: #2e7d32;
+    background-color: rgba(46, 125, 50, 0.1);
+}
+.skill-card .skill-type.evaluator {
+    color: #1565c0;
+    background-color: rgba(21, 101, 192, 0.1);
+}
+
+.skill-card .skill-summary {
+    font-size: 0.85em;
+    color: #555;
+    margin: 0;
+}
+
+.skill-card .skill-details {
+    display: none;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.skill-card.expanded .skill-details {
+    display: block;
+}
+
+.skill-card .skill-details h4 {
+    font-size: 0.75em;
+    color: #333;
+    margin: 0 0 6px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.skill-card .skill-details p {
+    font-size: 0.85em;
+    color: #555;
+    margin: 0 0 12px 0;
+}
+
+.skill-card .skill-details ul {
+    margin: 0 0 12px 0;
+    padding-left: 18px;
+    font-size: 0.85em;
+    color: #555;
+}
+
+.skill-card .skill-details li {
+    margin-bottom: 4px;
+}
+
+/* Quick Start Section */
+.quick-start {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.quick-start h2 {
+    text-align: center;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.quick-start-intro {
+    text-align: center;
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.workflow-link {
+    color: #1565c0;
+    text-decoration: none;
+}
+
+.workflow-link:hover {
+    text-decoration: underline;
+}
+
+/* Prerequisites - Gray Box */
+.prerequisites {
+    width: 220px;
+    flex-shrink: 0;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 20px;
+    font-size: 0.85em;
+    color: #555;
+    align-self: flex-start;
+}
+
+.prerequisites p {
+    margin: 0 0 12px 0;
+    color: #333;
+}
+
+.prerequisites ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.prerequisites li {
+    margin-bottom: 8px;
+}
+
+.prerequisites a {
+    color: #1565c0;
+}
+
+/* Setup Tabs - Full Width */
+.setup-tabs {
+    display: flex;
+    max-width: 900px;
+    margin: 0 auto 20px auto;
+}
+
+.setup-tab {
+    flex: 1;
+    padding: 10px 24px;
+    border: 2px solid #333;
+    background: transparent;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.setup-tab:first-child {
+    border-radius: 25px 0 0 25px;
+    border-right: 1px solid #333;
+}
+
+.setup-tab:last-child {
+    border-radius: 0 25px 25px 0;
+    border-left: 1px solid #333;
+}
+
+.setup-tab:hover {
+    background: #f0f0f0;
+}
+
+.setup-tab.active {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Two Column Layout */
+.quick-start-layout {
+    display: flex;
+    gap: 25px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.quick-start-steps {
+    flex: 1;
+}
+
+/* Setup Content */
+.setup-content {
+    display: none;
+}
+
+.setup-content.active {
+    display: block;
+}
+
+.step-alt {
+    font-size: 0.8em;
+    color: #888;
+    font-style: italic;
+    margin-top: 6px;
+}
+
+.step-alt a {
+    color: #1565c0;
+}
+
+.steps {
+    max-width: 100%;
+}
+
+.step {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.step:last-child {
+    margin-bottom: 0;
+}
+
+.step-number {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.step-content {
+    flex-grow: 1;
+}
+
+.step-content h3 {
+    font-size: 1em;
+    margin-bottom: 8px;
+}
+
+.step-content pre {
+    background-color: #f5f5f5;
+    padding: 12px;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin: 0;
+    border: 1px solid #eee;
+}
+
+.step-content code {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.85em;
+    line-height: 1.5;
+}
+
+.step-content p {
+    margin: 8px 0 0 0;
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* Feedback Section */
+.feedback-section {
+    background-color: #fff;
+    text-align: center;
+    padding: 15px 25px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.feedback-section p {
+    color: #555;
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.feedback-section a {
+    color: #1565c0;
+    font-weight: 500;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+}
+
+.footer-copyright {
+    font-size: 0.85em;
+    color: #666;
+    margin: 0;
+}
+
+footer a {
+    color: #555;
+}
+
+/* Workflow Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    max-width: 360px;
+    width: 90%;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #888;
+    line-height: 1;
+}
+
+.modal-close:hover {
+    color: #333;
+}
+
+.modal-content h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.2em;
+}
+
+.modal-subtitle {
+    color: #666;
+    font-size: 0.9em;
+    margin: 0 0 20px 0;
+}
+
+.workflow-diagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.workflow-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.workflow-box {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.75em;
+    padding: 5px 12px;
+    border-radius: 4px;
+    min-width: 160px;
+    text-align: center;
+}
+
+.workflow-box.builder {
+    background-color: rgba(46, 125, 50, 0.1);
+    color: #2e7d32;
+    border: 1px solid rgba(46, 125, 50, 0.3);
+}
+
+.workflow-box.evaluator {
+    background-color: rgba(21, 101, 192, 0.1);
+    color: #1565c0;
+    border: 1px solid rgba(21, 101, 192, 0.3);
+}
+
+.workflow-box.both {
+    background: linear-gradient(135deg, rgba(21, 101, 192, 0.1) 50%, rgba(46, 125, 50, 0.1) 50%);
+    color: #555;
+    border: 1px solid #ccc;
+}
+
+.workflow-arrow {
+    color: #bbb;
+    font-size: 0.75em;
+    line-height: 1;
+}
+
+.workflow-label {
+    font-size: 0.65em;
+    color: #888;
+    font-style: italic;
+}
+
+.workflow-loop {
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+}
+
+.loop-bracket {
+    width: 12px;
+    border: 2px solid #1565c0;
+    border-right: none;
+    border-radius: 8px 0 0 8px;
+    position: relative;
+}
+
+.loop-bracket::before {
+    content: "↑";
+    position: absolute;
+    top: -8px;
+    left: -2px;
+    color: #1565c0;
+    font-size: 0.8em;
+}
+
+.loop-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.loop-label {
+    font-size: 0.6em;
+    color: #1565c0;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    padding: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 20px;
+    }
+
+    .hero-media {
+        width: 250px;
+        margin-bottom: 10px;
+    }
+
+    .hero h1 {
+        font-size: 1.8em;
+    }
+
+    .cta-buttons {
+        justify-content: center;
+    }
+
+    .skills, .quick-start, .feedback-section {
+        padding: 25px 20px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-start-layout {
+        flex-direction: column;
+    }
+
+    .prerequisites {
+        width: 100%;
+        order: -1;
+        margin-bottom: 20px;
+    }
+
+    .setup-tabs {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    main {
+        padding: 15px;
+    }
+
+    .hero-media {
+        width: 200px;
+    }
+
+    .hero h1 {
+        font-size: 1.6em;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+    }
+
+    .step {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-media {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .terminal-demo {
+        font-size: 0.7em;
+    }
+
+    .terminal-body {
+        min-height: 150px;
+        padding: 12px;
+    }
+
+    .setup-tab {
+        padding: 8px 12px;
+        font-size: 0.85em;
+    }
+}
