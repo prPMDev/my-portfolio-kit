@@ -1,7 +1,7 @@
 // Skills data - ordered by suggested workflow (top to bottom, left to right)
 const SKILLS_DATA = [
   {
-    "name": "config",
+    "name": "setup",
     "displayName": "Setup Wizard",
     "description": "First-run setup wizard. Configures CLAUDE.md with identity and contact info.",
     "type": "builder",
@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Terminal demo - one continuous conversation showing full workflow
 const TERMINAL_LINES = [
     // Setup
-    { type: 'user', text: '<span class="skill">/config</span>' },
+    { type: 'user', text: '<span class="skill">/setup</span>' },
     { type: 'response', text: 'Let\'s set up your portfolio. Name?' },
     { type: 'user', text: 'Alex Chen' },
     { type: 'response', text: 'Role?' },
