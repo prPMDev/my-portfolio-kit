@@ -1,12 +1,12 @@
 ---
-name: config
+name: setup
 version: 1.0.0
 description: First-run setup wizard. Configures CLAUDE.md with identity and contact info.
 argument-hint: ""
 allowed-tools: Read, Write, Edit
 ---
 
-# Config
+# Setup
 
 First-run setup wizard for the portfolio skill kit.
 

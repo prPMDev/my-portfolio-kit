@@ -29,7 +29,7 @@ Take raw work stories and turn them into structured, anonymized case studies or 
 
 ## Process
 
-### Auto-Seed Mode (triggered by /config)
+### Auto-Seed Mode (triggered by /setup)
 
 If called with a Notes folder path from the **Source Material** section in CLAUDE.md:
 
@@ -78,7 +78,7 @@ If called with a Notes folder path from the **Source Material** section in CLAUD
    - "Keep as-is" if already safe
    - "Already anonymized" if you used placeholder names
    ```
-4. **Return** report + candidates to /config
+4. **Return** report + candidates to /setup
 
 ### Manual Mode (user invokes directly)
 

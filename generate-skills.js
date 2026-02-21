@@ -19,7 +19,7 @@ const OUTPUT_FILE = path.join(__dirname, 'skills.json');
 // Skill type classification
 const SKILL_TYPES = {
     // Builder skills - create content
-    'config': 'builder',
+    'setup': 'builder',
     'content-strategist': 'builder',
     'story-adapter': 'builder',
     'portfolio-copywriter': 'builder',

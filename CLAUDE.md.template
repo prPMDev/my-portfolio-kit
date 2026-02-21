@@ -15,7 +15,7 @@ Custom skills live in `.claude/skills/`. Invoke with `/skill-name`.
 
 | Task | Skill |
 |------|-------|
-| First-time setup | `/config` |
+| First-time setup | `/setup` |
 | Add content | `/content-strategist` |
 | Write copy | `/portfolio-copywriter` |
 | Work stories | `/story-adapter` |

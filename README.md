@@ -18,7 +18,7 @@ A collection of Claude Code skills that help you build a portfolio website. Not 
 git clone https://github.com/prpmdev/my-portfolio-kit.git my-portfolio
 cd my-portfolio
 claude
-/config
+/setup
 ```
 
 Or: **[Download ZIP](https://github.com/prpmdev/my-portfolio-kit/archive/refs/heads/main.zip)** | **[Use Template](https://github.com/prpmdev/my-portfolio-kit/generate)** | **[Fork](https://github.com/prpmdev/my-portfolio-kit/fork)**
@@ -29,7 +29,7 @@ Full setup guide: **[prpmdev.github.io/my-portfolio-kit](https://prpmdev.github.
 
 | Type | Skills |
 |------|--------|
-| **Builder** | `/config`, `/content-strategist`, `/story-adapter`, `/anonymizer`, `/portfolio-copywriter`, `/website-expert`, `/update` |
+| **Builder** | `/setup`, `/content-strategist`, `/story-adapter`, `/anonymizer`, `/portfolio-copywriter`, `/website-expert`, `/update` |
 | **Evaluator** | `/voice-guardian`, `/web-content-optimizer`, `/quality-check` |
 
 ## Keeping Skills Updated

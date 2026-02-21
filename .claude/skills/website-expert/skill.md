@@ -48,7 +48,7 @@ Own the technical and design quality of the site. Know modern web best practices
 - "How should I implement Y?"
 - Design feedback on content
 
-## Auto-Seed Mode (triggered by /config)
+## Auto-Seed Mode (triggered by /setup)
 
 When called with drafts from other skills:
 
@@ -64,7 +64,7 @@ When called with drafts from other skills:
    - Create case study sections
    - Update meta tags (title, description, OG)
    - Update contact links from **Contact** section in CLAUDE.md
-4. **Return** confirmation to /config:
+4. **Return** confirmation to /setup:
    ```
    Template populated:
    - ✓ Hero section

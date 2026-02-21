@@ -80,7 +80,7 @@ Use CLAUDE.md as source of truth. Only ask what's missing.
 
 ## Process
 
-### Auto-Seed Mode (triggered by /config)
+### Auto-Seed Mode (triggered by /setup)
 
 If called with sources from CLAUDE.md:
 
@@ -112,7 +112,7 @@ If called with sources from CLAUDE.md:
    - "What do you specialize in?"
    - "What drives you / why this work?"
    ```
-4. **Return** report + partial drafts to /config
+4. **Return** report + partial drafts to /setup
 
 ### Manual Mode (user invokes directly)
 

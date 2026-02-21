@@ -101,7 +101,7 @@ After each install, confirm:
 
 [N] skills updated, [M] new skills installed.
 
-Tip: Run `/config` if the update added new configuration options.
+Tip: Run `/setup` if the update added new configuration options.
 ```
 
 ## What This Skill Does NOT Do

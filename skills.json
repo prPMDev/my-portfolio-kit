@@ -6,7 +6,7 @@
     "version": "1.0.0"
   },
   {
-    "name": "config",
+    "name": "setup",
     "description": "First-run setup wizard. Configures CLAUDE.md with identity and contact info.",
     "type": "builder",
     "version": "1.0.0"
