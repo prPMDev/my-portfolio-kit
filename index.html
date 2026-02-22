@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VS1PHJX1YL"></script>
+    <!-- Google tag (gtag.js) - hostname check blocks spam/ghost traffic -->
     <script>
+      var defined_hostnames = ['prpmdev.github.io', 'localhost'];
+      if (defined_hostnames.some(function(h) { return location.hostname.indexOf(h) > -1; })) {
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-VS1PHJX1YL';
+        document.head.appendChild(s);
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-VS1PHJX1YL');
+      }
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,7 +66,7 @@
 
                 <p class="hero-flow">Setup → Adapt stories → Anonymize → Write copy → Check voice → Optimize → Publish</p>
 
-                <p class="hero-branding">Built by <a href="https://prpmdev.github.io/prashant-rana/">a PM who doesn't abandon ship after shipping</a>.</p>
+                <p class="hero-branding">Built by <a href="https://prpmdev.github.io/prashant-rana/">a PM who doesn't abandon ship after shipping</a>. <a href="https://prpmdev.github.io/prashant-rana/" style="opacity:0.7;">See the portfolio built with this kit →</a></p>
 
                 <div class="cta-buttons">
                     <a href="#quick-start" class="btn btn-primary" onclick="gtag('event', 'click', {event_category: 'CTA', event_label: 'Get Started'})">Get Started</a>
@@ -119,7 +125,7 @@
                                 <span class="step-number">3</span>
                                 <div class="step-content">
                                     <h3>Open in Claude Desktop</h3>
-                                    <p>Open the folder. Skills load automatically.</p>
+                                    <p>Open the folder. Type <code>/</code> to see available skills.</p>
                                 </div>
                             </div>
                             <div class="step">
