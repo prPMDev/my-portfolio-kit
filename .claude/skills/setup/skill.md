@@ -82,6 +82,11 @@ If paths provided, add to CLAUDE.md:
 
 ### Step 3: Generate CLAUDE.md
 
+**Guard:** Before proceeding, verify `CLAUDE.md.template` exists in the project root:
+- If missing, tell the user:
+  > "`CLAUDE.md.template` is missing. Download it from https://github.com/prpmdev/my-portfolio-kit/blob/main/CLAUDE.md.template and place it in your project root, then re-run `/setup`."
+- Do NOT continue with Step 3 if the template is missing.
+
 Read `CLAUDE.md.template` and replace:
 
 | Placeholder | Replace With |
@@ -99,6 +104,9 @@ Read `CLAUDE.md.template` and replace:
 Write to `CLAUDE.md`.
 
 ### Step 4: Update Template (Optional)
+
+Remove the setup banner from `index.html`:
+- Delete the element with `id="setup-banner"` (the welcome div at the top of `<body>`)
 
 Ask if user wants to update `index.html` (the portfolio starter):
 - Replace `[Your Name]` with actual name

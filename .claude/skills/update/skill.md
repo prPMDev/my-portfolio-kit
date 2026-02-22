@@ -74,6 +74,13 @@ Ask which skills to update/install:
 
 ### Step 6: Install Selected
 
+For each selected skill that is an **update** (not new):
+1. Diff the local `skill.md` against the remote version
+2. If the files differ beyond just the version number, warn the user:
+   > "Your local `/[name]` has customizations that will be overwritten."
+3. Offer to back up: save current file as `skill.md.backup` in the same directory
+4. Only proceed with the overwrite after user confirms
+
 For each selected skill:
 
 ```bash
@@ -115,5 +122,5 @@ Tip: Run `/setup` if the update added new configuration options.
 ## Notes
 
 - The `/update` skill itself can be updated — it will show up in the update list like any other skill
-- If you've customized a skill locally, the update will overwrite your changes — back up first if needed
+- If you've customized a skill locally, you'll be offered a `skill.md.backup` before overwriting
 - Version follows semver: patch (1.0.1) = bug fix, minor (1.1.0) = new feature, major (2.0.0) = breaking change

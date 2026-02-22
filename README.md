@@ -8,7 +8,7 @@ AI-powered skills for building your personal portfolio with Claude Code.
 
 A collection of Claude Code skills that help you build a portfolio website. Not a template — you do the work, AI helps you move.
 
-- **10 skills** for content, design, quality checks, and self-updating
+- **Claude Code skills** for content, design, quality checks, and self-updating
 - **Builder voice** — shows what you shipped, not managed
 - **Anonymization built-in** — protect work content while preserving impact
 
