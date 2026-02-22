@@ -1,5 +1,21 @@
+# System files
 .DS_Store
 Thumbs.db
+
+# Dependencies
 node_modules/
+
+# Logs
 *.log
+
+# User-specific Claude Code config (contains personal info)
+CLAUDE.md
+claude.md
+
+# Secrets and credentials
 .env
+.env.*
+*.key
+*.pem
+*.p12
+credentials*.json
