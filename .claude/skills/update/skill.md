@@ -18,37 +18,43 @@ Check for new or updated skills from the My Portfolio Kit upstream.
 
 ## Process
 
-### Step 1: Fetch Remote Manifest
+### Step 1: Resolve Upstream URL
+
+Read `CLAUDE.md` and find the `## Kit` section → `Upstream:` value.
+- Convert `https://github.com/{owner}/{repo}` to raw base: `https://raw.githubusercontent.com/{owner}/{repo}/main/`
+- If not found in CLAUDE.md, fall back to `https://github.com/prpmdev/my-portfolio-kit`
+
+### Step 2: Fetch Remote Manifest
 
 Fetch `skills.json` from the upstream repository:
 
 ```bash
-curl -s https://raw.githubusercontent.com/prpmdev/my-portfolio-kit/main/skills.json
+curl -s {raw_base_url}skills.json
 ```
 
 If the fetch fails, inform user:
 > "Couldn't reach the upstream repo. Check your internet connection or try again later."
 
-### Step 2: Read Local Skills
+### Step 3: Read Local Skills
 
 For each skill directory in `.claude/skills/`:
 1. Read `skill.md`
 2. Parse the `version` field from frontmatter
 3. If no version field, treat as `0.0.0` (pre-versioning)
 
-### Step 3: Compare Versions
+### Step 4: Compare Versions
 
 For each skill in the remote manifest:
 1. Check if skill exists locally in `.claude/skills/[name]/skill.md`
 2. Compare `version` field (remote vs local)
 3. Categorize: **new** | **update available** | **up to date**
 
-### Step 4: Report
+### Step 5: Report
 
 ```
 ## Skill Update Check
 
-**Remote:** github.com/prpmdev/my-portfolio-kit
+**Remote:** {upstream_url}
 **Local skills:** [count]
 
 | Skill | Local | Remote | Status |
@@ -63,7 +69,7 @@ For each skill in the remote manifest:
 If everything is up to date:
 > "All skills up to date. Nothing to do."
 
-### Step 5: User Selects
+### Step 6: User Selects
 
 Ask which skills to update/install:
 - "Update all" — apply all updates and new skills
@@ -72,7 +78,7 @@ Ask which skills to update/install:
 
 **Never force-update. Never auto-apply.**
 
-### Step 6: Install Selected
+### Step 7: Install Selected
 
 For each selected skill that is an **update** (not new):
 1. Diff the local `skill.md` against the remote version
@@ -84,7 +90,7 @@ For each selected skill that is an **update** (not new):
 For each selected skill:
 
 ```bash
-curl -s https://raw.githubusercontent.com/prpmdev/my-portfolio-kit/main/.claude/skills/[name]/skill.md \
+curl -s {raw_base_url}.claude/skills/[name]/skill.md \
   -o .claude/skills/[name]/skill.md
 ```
 
@@ -96,7 +102,7 @@ mkdir -p .claude/skills/[name]
 After each install, confirm:
 > "Updated `/[name]` from [old] to [new]"
 
-### Step 7: Summary
+### Step 8: Summary
 
 ```
 ## Update Complete

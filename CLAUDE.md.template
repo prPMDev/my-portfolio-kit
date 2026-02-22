@@ -35,6 +35,10 @@ Custom skills live in `.claude/skills/`. Invoke with `/skill-name`.
 - Notes: {{NOTES_PATH}}
 - LinkedIn: {{LINKEDIN_EXPORT}}
 
+## Kit
+
+- Upstream: https://github.com/prpmdev/my-portfolio-kit
+
 ## Guidelines
 
 - Content first, design later
