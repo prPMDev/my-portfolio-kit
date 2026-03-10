@@ -293,6 +293,10 @@ a:hover {
     background-color: #1565c0;
 }
 
+.legend-dot.meta {
+    background-color: #7b1fa2;
+}
+
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -369,6 +373,10 @@ a:hover {
 .skill-card .skill-type.evaluator {
     color: #1565c0;
     background-color: rgba(21, 101, 192, 0.1);
+}
+.skill-card .skill-type.meta {
+    color: #7b1fa2;
+    background-color: rgba(123, 31, 162, 0.1);
 }
 
 .skill-card .skill-summary {

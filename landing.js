@@ -138,6 +138,34 @@ const SKILLS_DATA = [
       "You pick what to install — never auto-updates",
       "Never touches your CLAUDE.md or content files"
     ]
+  },
+  {
+    "name": "skill-improver-builder",
+    "displayName": "Builder Improver",
+    "description": "Improve builder skills based on usage patterns and feedback. Tracks what you override, reject, or redo.",
+    "type": "meta",
+    "whenToUse": "When a builder skill keeps producing output you override or reject.",
+    "howItWorks": [
+      "Collects signals from your usage patterns",
+      "Reads the target skill file",
+      "Proposes one specific edit per gap found",
+      "You approve, reject, or modify each proposal",
+      "Logs changes so you can track what evolved"
+    ]
+  },
+  {
+    "name": "skill-improver-evaluator",
+    "displayName": "Evaluator Improver",
+    "description": "Recalibrates evaluator skills when your judgment and the skill's diverge.",
+    "type": "meta",
+    "whenToUse": "When an evaluator grades too strict, too lenient, or misses things.",
+    "howItWorks": [
+      "Tracks your overrides — when you ship despite a fail grade",
+      "Identifies gap type: over-strict, under-strict, missing check",
+      "Proposes calibration edits to grading criteria",
+      "You approve each change individually",
+      "Fewer false positives over time"
+    ]
   }
 ];
 
