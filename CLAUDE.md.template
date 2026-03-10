@@ -13,17 +13,19 @@
 
 Custom skills live in `.claude/skills/`. Invoke with `/skill-name`.
 
-| Task | Skill |
-|------|-------|
-| First-time setup | `/setup` |
-| Add content | `/content-strategist` |
-| Write copy | `/portfolio-copywriter` |
-| Work stories | `/story-adapter` |
-| Anonymize work content | `/anonymizer` |
-| Technical/design | `/website-expert` |
-| Voice & tone check | `/voice-guardian` |
-| SEO & performance | `/web-content-optimizer` |
-| Final gate | `/quality-check` |
+| Task | Skill | Type |
+|------|-------|------|
+| First-time setup | `/setup` | builder |
+| Add content | `/content-strategist` | builder |
+| Write copy | `/portfolio-copywriter` | builder |
+| Work stories | `/story-adapter` | builder |
+| Anonymize work content | `/anonymizer` | builder |
+| Technical/design | `/website-expert` | builder |
+| Voice & tone check | `/voice-guardian` | evaluator |
+| SEO & performance | `/web-content-optimizer` | evaluator |
+| Final gate | `/quality-check` | evaluator |
+| Improve builder skills | `/skill-improver-builder` | meta |
+| Improve evaluator skills | `/skill-improver-evaluator` | meta |
 
 ## Voice Profile
 
@@ -45,3 +47,4 @@ Custom skills live in `.claude/skills/`. Invoke with `/skill-name`.
 - Authentic voice matching your profile — show what you've done
 - Less maintained > more stale
 - **Skill transparency:** ALWAYS announce which skill is being invoked, even within the same conversation. Say "Using `/skill-name`..." before invoking.
+- **Meta-skills:** When you notice yourself repeatedly overriding a skill's output or disagreeing with an evaluator's grade, suggest running `/skill-improver-builder` or `/skill-improver-evaluator` to recalibrate.

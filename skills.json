@@ -58,5 +58,17 @@
     "description": "Technical and design expert for the portfolio site. Explores codebase, implements changes, optimizes code, knows modern web best practices.",
     "type": "builder",
     "version": "1.0.0"
+  },
+  {
+    "name": "skill-improver-builder",
+    "description": "Improve builder skills based on usage patterns and feedback. Tracks what you override, reject, or redo — then proposes targeted edits.",
+    "type": "evaluator",
+    "version": "1.0.0"
+  },
+  {
+    "name": "skill-improver-evaluator",
+    "description": "Improve evaluator skills based on usage patterns, overrides, and feedback. Recalibrates grading criteria when your judgment and the skill's diverge.",
+    "type": "evaluator",
+    "version": "1.0.0"
   }
 ]
