@@ -169,10 +169,43 @@ const SKILLS_DATA = [
   }
 ];
 
+// Hash-based navigation: filter by type (#builder, #evaluator, #meta) or deep-link to a skill (#skill-name)
+function handleHash() {
+    const hash = location.hash.slice(1);
+    const showAllBtn = document.querySelector('.legend-show-all');
+
+    // No hash or empty — show all cards, hide "Show all" link
+    if (!hash) {
+        document.querySelectorAll('.skill-card').forEach(card => card.style.display = '');
+        if (showAllBtn) showAllBtn.style.display = 'none';
+        return;
+    }
+
+    // Type filter: #builder, #evaluator, #meta
+    const validTypes = ['builder', 'evaluator', 'meta'];
+    if (validTypes.includes(hash)) {
+        document.querySelectorAll('.skill-card').forEach(card => {
+            const types = card.dataset.type.split(' ');
+            card.style.display = types.includes(hash) ? '' : 'none';
+        });
+        if (showAllBtn) showAllBtn.style.display = '';
+        return;
+    }
+
+    // Single skill deep link: #skill-name
+    const card = document.getElementById(hash);
+    if (card) {
+        card.classList.add('expanded');
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+}
+
 // Load and render skills
 document.addEventListener('DOMContentLoaded', () => {
     renderSkills(SKILLS_DATA);
     updateSkillCount(SKILLS_DATA.length);
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
     initTracking();
     initTerminalDemo();
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -297,7 +330,7 @@ function renderSkills(skills) {
         const typeLabels = types.map(t => `<span class="skill-type ${t}">${t}</span>`).join(' ');
 
         return `
-        <div class="skill-card" data-index="${index}" onclick="toggleSkill(this)">
+        <div class="skill-card" id="${skill.name}" data-type="${types.join(' ')}" data-index="${index}" onclick="toggleSkill(this)">
             <div class="skill-card-header">
                 <div class="skill-title-row">
                     <span class="skill-display-name">${skill.displayName}</span>

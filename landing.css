@@ -277,6 +277,18 @@ a:hover {
     gap: 6px;
     font-size: 0.8em;
     color: #666;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.legend-item:hover {
+    color: #333;
+}
+
+.legend-show-all {
+    font-size: 0.75em;
+    color: #999;
+    text-decoration: underline;
 }
 
 .legend-dot {
