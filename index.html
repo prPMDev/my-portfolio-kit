@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) - hostname check blocks spam/ghost traffic -->
+    <!-- Google tag (gtag.js) - strict hostname check blocks copiers/spam -->
     <script>
-      var defined_hostnames = ['prpmdev.github.io', 'localhost'];
-      if (defined_hostnames.some(function(h) { return location.hostname.indexOf(h) > -1; })) {
+      var allowedHostnames = ['prpmdev.github.io', 'localhost'];
+      if (allowedHostnames.includes(location.hostname)) {
         var s = document.createElement('script');
         s.async = true;
-        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-VS1PHJX1YL';
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-342XCVT9FL';
         document.head.appendChild(s);
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-VS1PHJX1YL');
+        gtag('config', 'G-342XCVT9FL');
       }
     </script>
     <meta charset="UTF-8">
