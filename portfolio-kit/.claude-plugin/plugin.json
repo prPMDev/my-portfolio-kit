@@ -1,0 +1,11 @@
+{
+  "name": "portfolio-kit",
+  "version": "0.3.0",
+  "description": "Build a portfolio that stays alive. Extract your real voice from your own writing, turn work into anonymized case studies, and keep it current as you ship — all conversationally, no coding required.",
+  "author": {
+    "name": "Prashant Rana"
+  },
+  "homepage": "https://prpmdev.github.io/my-portfolio-kit/",
+  "license": "MIT",
+  "keywords": ["portfolio", "personal-brand", "writing", "career", "anonymization", "maintenance"]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "portfolio-kit",
+  "owner": { "name": "Prashant Rana" },
+  "plugins": [
+    {
+      "name": "portfolio-kit",
+      "source": "./portfolio-kit",
+      "description": "Build a portfolio that stays alive — extract your voice from your own writing, turn work into anonymized case studies, and keep it current as you ship. No coding required.",
+      "version": "0.3.0",
+      "keywords": ["portfolio", "personal-brand", "writing", "career", "anonymization", "maintenance"]
+    }
+  ]
+}

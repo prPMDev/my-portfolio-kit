@@ -1,0 +1,68 @@
+/* Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Base */
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    color: #1a1a1a;
+    background: #fafafa;
+}
+
+/* Typography */
+h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #333; }
+h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+p { margin-bottom: 1rem; }
+
+/* Layout */
+header { margin-bottom: 3rem; }
+main section { margin-bottom: 3rem; }
+footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #e0e0e0; color: #666; }
+
+/* Components */
+.positioning {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.work-item {
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Links */
+a { color: #0066cc; }
+a:hover { color: #004499; }
+
+/* Responsive */
+@media (max-width: 600px) {
+    body { padding: 1rem; }
+    h1 { font-size: 2rem; }
+    nav { flex-wrap: wrap; gap: 1rem; }
+}
