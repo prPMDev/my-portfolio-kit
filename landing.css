@@ -895,3 +895,133 @@ footer a {
         font-size: 0.85em;
     }
 }
+
+/* Install in Cowork Section */
+.install-cowork {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.install-cowork h2 {
+    text-align: center;
+    font-size: 1.4em;
+    margin-bottom: 8px;
+}
+
+.install-intro {
+    text-align: center;
+    font-size: 0.9em;
+    color: #555;
+    max-width: 640px;
+    margin: 0 auto 20px auto;
+}
+
+.install-intro em {
+    font-style: normal;
+    font-weight: 600;
+    color: #333;
+}
+
+.install-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 12px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.install-option {
+    background-color: #f8f8f8;
+    padding: 18px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.install-option h3 {
+    font-size: 1em;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.install-badge {
+    font-size: 0.6em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #2e7d32;
+    background-color: rgba(46, 125, 50, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.install-option p {
+    font-size: 0.85em;
+    color: #555;
+    margin: 0 0 12px 0;
+}
+
+.install-url {
+    display: flex;
+    gap: 8px;
+    align-items: stretch;
+}
+
+.install-url code {
+    flex-grow: 1;
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.8em;
+    overflow-x: auto;
+    white-space: nowrap;
+    line-height: 1.6;
+}
+
+.copy-btn {
+    flex-shrink: 0;
+    padding: 8px 16px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85em;
+    transition: background-color 0.2s ease;
+}
+
+.copy-btn:hover {
+    background-color: #555;
+}
+
+.install-then {
+    text-align: center;
+    font-size: 0.85em;
+    color: #666;
+    max-width: 640px;
+    margin: 20px auto 0 auto;
+}
+
+.install-then strong {
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .install-cowork {
+        padding: 25px 20px;
+    }
+    .install-options {
+        grid-template-columns: 1fr;
+    }
+    .install-url {
+        flex-direction: column;
+    }
+    .copy-btn {
+        width: 100%;
+    }
+}

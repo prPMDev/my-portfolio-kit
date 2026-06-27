@@ -189,6 +189,31 @@ cd my-portfolio</code></pre>
             </div>
         </section>
 
+        <!-- Install in Cowork -->
+        <section id="install-cowork" class="install-cowork">
+            <h2>Install in Cowork</h2>
+            <p class="install-intro">Use the whole kit inside Claude Cowork — no terminal, no setup. Add it once, then just say <em>"help me build my portfolio."</em></p>
+
+            <div class="install-options">
+                <div class="install-option">
+                    <h3>Add by link <span class="install-badge">recommended</span></h3>
+                    <p>In Cowork: <strong>Customize → Plugins → Add marketplace from GitHub</strong>, then paste:</p>
+                    <div class="install-url">
+                        <code>https://github.com/prpmdev/my-portfolio-kit</code>
+                        <button type="button" class="copy-btn" onclick="navigator.clipboard.writeText('https://github.com/prpmdev/my-portfolio-kit');this.textContent='Copied';setTimeout(()=>this.textContent='Copy',1500);if(window.gtag)gtag('event','click',{event_category:'Install',event_label:'Copy URL'});">Copy</button>
+                    </div>
+                </div>
+
+                <div class="install-option">
+                    <h3>Or upload a file</h3>
+                    <p>Prefer a file? Download the plugin, then in Cowork use <strong>Customize → Plugins → Add → Upload a file</strong>.</p>
+                    <a href="portfolio-kit.zip" class="btn btn-secondary" download onclick="if(window.gtag)gtag('event','click',{event_category:'Install',event_label:'Download ZIP'})">⬇ Download plugin (.zip)</a>
+                </div>
+            </div>
+
+            <p class="install-then">Then: <strong>tell it what you've done</strong> → it builds your page → <strong>drag the folder to a free host</strong> to go live.</p>
+        </section>
+
         <!-- Feedback Section -->
         <section id="feedback" class="feedback-section">
             <p>Found a bug or have ideas? <a href="https://github.com/prpmdev/my-portfolio-kit/issues" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'click', {event_category: 'Feedback', event_label: 'GitHub Issues'})">Open an issue</a> — I actually want to hear it.</p>
