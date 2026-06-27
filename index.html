@@ -189,29 +189,32 @@ cd my-portfolio</code></pre>
             </div>
         </section>
 
-        <!-- Install in Cowork -->
+        <!-- Install as a plugin -->
         <section id="install-cowork" class="install-cowork">
-            <h2>Install in Cowork</h2>
-            <p class="install-intro">Use the whole kit inside Claude Cowork — no terminal, no setup. Add it once, then just say <em>"help me build my portfolio."</em></p>
+            <h2>Install as a plugin</h2>
+            <p class="install-intro">The kit is packaged as a Claude plugin. Today it installs through <strong>Claude Code</strong>; a no-terminal install inside Claude Cowork will follow once Cowork supports custom plugins.</p>
 
             <div class="install-options">
                 <div class="install-option">
-                    <h3>Add by link <span class="install-badge">recommended</span></h3>
-                    <p>In Cowork: <strong>Customize → Plugins → Add marketplace from GitHub</strong>, then paste:</p>
+                    <h3>Claude Code <span class="install-badge">works today</span></h3>
+                    <p>Two commands — add the marketplace, then install:</p>
                     <div class="install-url">
-                        <code>https://github.com/prpmdev/my-portfolio-kit</code>
-                        <button type="button" class="copy-btn" onclick="navigator.clipboard.writeText('https://github.com/prpmdev/my-portfolio-kit');this.textContent='Copied';setTimeout(()=>this.textContent='Copy',1500);if(window.gtag)gtag('event','click',{event_category:'Install',event_label:'Copy URL'});">Copy</button>
+                        <code>claude plugin marketplace add prpmdev/my-portfolio-kit</code>
+                        <button type="button" class="copy-btn" onclick="navigator.clipboard.writeText('claude plugin marketplace add prpmdev/my-portfolio-kit');this.textContent='Copied';setTimeout(()=>this.textContent='Copy',1500);if(window.gtag)gtag('event','click',{event_category:'Install',event_label:'Copy marketplace cmd'});">Copy</button>
+                    </div>
+                    <div class="install-url" style="margin-top:8px;">
+                        <code>claude plugin install portfolio-kit@portfolio-kit</code>
+                        <button type="button" class="copy-btn" onclick="navigator.clipboard.writeText('claude plugin install portfolio-kit@portfolio-kit');this.textContent='Copied';setTimeout(()=>this.textContent='Copy',1500);if(window.gtag)gtag('event','click',{event_category:'Install',event_label:'Copy install cmd'});">Copy</button>
                     </div>
                 </div>
 
                 <div class="install-option">
-                    <h3>Or upload a file</h3>
-                    <p>Prefer a file? Download the plugin, then in Cowork use <strong>Customize → Plugins → Add → Upload a file</strong>.</p>
-                    <a href="portfolio-kit.zip" class="btn btn-secondary" download onclick="if(window.gtag)gtag('event','click',{event_category:'Install',event_label:'Download ZIP'})">⬇ Download plugin (.zip)</a>
+                    <h3>Claude Cowork <span class="install-badge" style="color:#888;background:#f0f0f0;">coming</span></h3>
+                    <p>Cowork doesn't install custom plugins yet — only Anthropic's curated marketplace. The kit is already packaged, so a one-click Cowork install will work the moment that opens up.</p>
                 </div>
             </div>
 
-            <p class="install-then">Then: <strong>tell it what you've done</strong> → it builds your page → <strong>drag the folder to a free host</strong> to go live.</p>
+            <p class="install-then">Either way: run <strong>setup</strong>, then just say <em>"help me build my portfolio."</em></p>
         </section>
 
         <!-- Feedback Section -->
