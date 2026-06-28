@@ -1,236 +1,87 @@
 ---
 name: setup
-version: 1.0.0
-description: First-run setup wizard. Configures CLAUDE.md with identity and contact info.
+description: First-run setup for the portfolio kit. Gathers identity and contact, then points to the next step. Use when starting a new portfolio, "set up my portfolio", "get started", or the first time using this kit.
 argument-hint: ""
 allowed-tools: Read, Write, Edit
 ---
 
 # Setup
 
-First-run setup wizard for the portfolio skill kit.
+Get a new user started in under five minutes. Gather the minimum, store it, and hand off. Do NOT try to write content here — other skills do that.
 
-## When to Use
+## Goal
 
-- First time setting up the skill kit
-- Updating contact info
-- After cloning the my-portfolio-kit repo
-
-## What It Does
-
-1. Asks about you (name, role, contact)
-2. Creates personalized CLAUDE.md
-3. Optionally updates the HTML template
-4. Points to next steps
+Create a `CLAUDE.md` profile in the user's working folder that every other skill reads as its source of truth, then route the user to `find-my-voice`.
 
 ## Process
 
-### Step 1: Gather Identity & Contact
+### 1. Welcome + the map
 
-**Identity**
-- What's your name?
-- What's your professional title/role?
+Greet the user and lay out the whole path so they're never lost:
+> "Welcome — I'll get you from raw material to portfolio content, no coding. The path: **setup** (now) → **find-my-voice** (so it sounds like you) → **content-strategist** (what to add) → **story-adapter** / **portfolio-copywriter** (create it) → **voice-guardian** → **quality-check** → publish in whatever builder you like → **refresh** (keep it current). You don't run all of them every time — I'll point you to the next step."
 
-**Contact**
-- Email address
+### 2. Gather identity and contact
+
+Ask conversationally (use AskUserQuestion where it helps, but keep it light):
+- Name
+- What they do / role
+- Email
 - LinkedIn URL
-- GitHub URL (optional)
+- GitHub or personal site (optional — skip if they don't have one; do not imply they should)
 
-### Step 1b: Voice Profile
+Never block on optional fields.
 
-Ask: "How would you describe your professional voice? Some examples:"
+### 3. Ask for raw material
 
-| Style | Sounds Like |
-|-------|-------------|
-| **Builder** | "I ship things — code, products, systems" |
-| **Strategist** | "I see the big picture — roadmaps, direction, bets" |
-| **Technical** | "I go deep — architecture, systems, hard problems" |
-| **Analytical** | "I dig into data — insights, patterns, decisions" |
-| **Empathetic Leader** | "I bring people together — teams, alignment, growth" |
-| **Or your own** | Describe it however feels right |
+Ask: "Do you have anything I can work from?" and accept any of:
+- A résumé (file or paste)
+- Things they've written (LinkedIn posts, a newsletter, talks, even emails) — flag these as **voice samples** for `find-my-voice`
+- Rough notes on projects or wins
 
-User can pick one, combine multiple, or describe in their own words.
+If they have nothing, that's fine — say so and move on.
 
-Store in CLAUDE.md:
+### 4. Write the profile
+
+Create or update `CLAUDE.md` in the working folder:
+
 ```
-## Voice Profile
-- Style: [whatever they said — builder / strategist / "analytical + builder" / "collaborative problem-solver" / etc.]
-```
+# Portfolio Profile
 
-Keep it low-pressure:
-> "This just helps me match the tone when writing your content. You can change it anytime."
+**Owner:** [name]
+**Role:** [role]
 
-### Step 2: Source Material (Optional)
+## Contact
+- Email: [email]
+- LinkedIn: [url]
+- Site/GitHub: [url or "none"]
 
-Ask: "Do you have existing content I can work from?"
-
-| Source Type | Question | Store In CLAUDE.md |
-|-------------|----------|-------------------|
-| **Resume** | "Path to resume file?" | `source.resume: [path]` |
-| **Notes/stories** | "Folder with notes or stories?" | `source.notes: [path]` |
-| **LinkedIn export** | "LinkedIn PDF or profile URL?" | `source.linkedin: [path/url]` |
-
-If user says "no" or "skip" — that's fine. Skills will ask when needed.
-
-If paths provided, add to CLAUDE.md:
-```
 ## Source Material
-- Resume: [path or "not provided"]
-- Notes: [path or "not provided"]
-- LinkedIn: [path or "not provided"]
+- Résumé: [path/pasted/none]
+- Writing samples: [list/none]
+- Notes: [path/none]
+
+## Voice Profile
+- (not captured yet — run find-my-voice)
 ```
 
-### Step 3: Generate CLAUDE.md
+### 4b. Protect private files
 
-**Guard:** Before proceeding, verify `CLAUDE.md.template` exists in the project root:
-- If missing, tell the user:
-  > "`CLAUDE.md.template` is missing. Download it from https://github.com/prpmdev/my-portfolio-kit/blob/main/CLAUDE.md.template and place it in your project root, then re-run `/setup`."
-- Do NOT continue with Step 3 if the template is missing.
-
-Read `CLAUDE.md.template` and replace:
-
-| Placeholder | Replace With |
-|-------------|--------------|
-| `{{NAME}}` | User's name |
-| `{{TITLE}}` | Professional title |
-| `{{EMAIL}}` | Email address |
-| `{{LINKEDIN}}` | LinkedIn URL |
-| `{{GITHUB}}` | GitHub URL |
-| `{{RESUME_PATH}}` | Resume path or "not provided" |
-| `{{NOTES_PATH}}` | Notes folder or "not provided" |
-| `{{LINKEDIN_EXPORT}}` | LinkedIn export or "not provided" |
-| `{{VOICE_PROFILE}}` | Selected style(s) or "not set" |
-
-Write to `CLAUDE.md`.
-
-### Step 4: Update Template (Optional)
-
-Remove the setup banner from `index.html`:
-- Delete the element with `id="setup-banner"` (the welcome div at the top of `<body>`)
-
-Ask if user wants to update `index.html` (the portfolio starter):
-- Replace `[Your Name]` with actual name
-- Replace placeholder contact links
-- Update meta tags
-
-### Step 5: Auto-Seed (if sources provided)
-
-If user provided source material, don't wait — start building:
-
-**In parallel:**
-
-| Source | Action | Skill |
-|--------|--------|-------|
-| Resume | Extract positioning, key achievements | `/portfolio-copywriter` |
-| Notes/stories | Identify story candidates | `/story-adapter` |
-| LinkedIn | Pull headline, summary | `/portfolio-copywriter` |
-| Template | Populate with extracted info | `/website-expert` |
-
-### Step 5b: Gap Analysis
-
-After reading sources, report **what was found** (even partial) and **what's missing**:
+Create or update `.gitignore` in the working folder so sensitive kit files are never committed or published:
 
 ```
-## Auto-Seed Results
-
-### What I Found
-
-| Section | Status | Extracted |
-|---------|--------|-----------|
-| Positioning | Partial | "Senior Engineer" but no specialty/focus |
-| About | Found | LinkedIn summary (3 sentences) |
-| Achievements | Partial | 2 bullet points, task-focused not outcome-focused |
-| Case studies | Partial | 1 story has Situation+Task+Action, missing Result |
-| Contact | Found | Email + LinkedIn from sources |
-
-### What I Need
-
-| Gap | STAR Element Missing | Question |
-|-----|---------------------|----------|
-| Positioning | N/A | "Senior Engineer in what? What do you build?" |
-| Achievements | Result | "That migration you did — what was the result?" |
-| Case study #1 | Result | "The payment system redesign — what happened?" |
-
-### Draft Preview (gaps marked)
-
-**Hero:**
-"I'm a Senior Engineer specializing in [NEED: focus area].
-I build [NEED: what you build]."
-
-**Case Study #1 (STAR):**
-- Situation: [Extracted from source]
-- Task: "Payment system couldn't scale past 1K TPS"
-- Action: "Redesigned architecture, migrated to event sourcing"
-- Result: [NEED: what was the result?]
-
----
-
-Fill the gaps above, or say "draft anyway" to proceed with placeholders.
+# portfolio-kit private files — never publish
+ANONYMIZATION-LEDGER.md
 ```
 
-### Step 5c: Present Draft (if enough info)
+The ledger (created later by story-adapter) holds the real, unredacted originals. Treat it like a password file — if a publish/deploy step is ever added, it must exclude this file too.
 
-```
-## Draft Portfolio Ready
+### 5. Hand off
 
-I've seeded your portfolio from:
-- Resume: [what was extracted]
-- Notes: [stories identified]
-- LinkedIn: [headline/summary used]
+Point to the next step explicitly:
+> "Setup done. Next: run **find-my-voice** so everything sounds like you. Then **content-strategist** helps decide what to add, **story-adapter** / **portfolio-copywriter** create it, and the rest of the kit polishes it — with **refresh** keeping it current."
 
-**Draft sections:**
-- Hero: [draft]
-- About: [draft]
-- Case studies: [list of candidates]
+## Rules
 
-**Gaps filled by asking:** [list if any]
-
-Review and refine? Next step: `/voice-guardian` for tone check, then `/quality-check`.
-```
-
-### Step 6: Suggest Sources (if none provided)
-
-If user skipped all source material, don't just say "go figure it out." Suggest what to provide:
-
-```
-## Setup Complete!
-
-**Your info:**
-- Name: [name]
-- Role: [role]
-- Contact: [email, LinkedIn, GitHub]
-
-**No source material yet.** That's OK — but I can build faster with something to work from.
-
-### What would help most (pick any):
-
-| Source | Why It Helps | How to Provide |
-|--------|-------------|----------------|
-| **Resume** (best start) | Extracts positioning, skills, achievements | Drop a PDF/DOC in your project: `docs/resume.pdf` |
-| **LinkedIn About section** | Good positioning + summary text | Paste it here, or export profile as PDF |
-| **Work stories** | Case study candidates (uses STAR format) | Write a few bullet points per story in `docs/stories/` |
-| **Existing portfolio** | Baseline to improve | Share the URL or paste the text |
-
-### Or just describe yourself:
-
-Tell me in a few sentences:
-1. What do you do?
-2. What are you good at?
-3. What kind of role are you looking for?
-
-I'll draft from that.
-```
-
-## What This Skill Does NOT Do
-
-- Ask about anonymization (that's `/anonymizer` per-content)
-- Ask about positioning (that's `/content-strategist` or `/portfolio-copywriter`)
-- Ask about personal touch (that's `/portfolio-copywriter` when writing About)
-
-Keep config minimal. Skills gather context when they need it.
-
-## Notes
-
-- Run once at setup
-- Can re-run to update contact info
-- Does not overwrite content, only CLAUDE.md
+- Keep it short. This is config, not content.
+- Don't ask about anonymization (that's built into `story-adapter` and `refresh`).
+- Don't pick a voice from a menu here — `find-my-voice` does that properly by reading their writing.

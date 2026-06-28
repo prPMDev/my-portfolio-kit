@@ -19,3 +19,6 @@ claude.md
 *.pem
 *.p12
 credentials*.json
+
+# Internal working notes — strategy, brief, decisions, ideas (local only, not for the public repo)
+_notes/

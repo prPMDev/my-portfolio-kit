@@ -1,244 +1,73 @@
 ---
 name: story-adapter
-version: 1.0.0
-description: Transform work experiences into anonymized portfolio content. Use for case studies, highlights, achievements, and any work-related content.
+description: Turn raw work experience into anonymized, on-voice portfolio case studies. Built-in confidentiality and PII protection. Use for "add a project", "turn this into a case study", work stories, achievements, or any employment content.
 argument-hint: "[work story or achievement]"
-allowed-tools: Read, Edit, Write
+allowed-tools: Read, Write, Edit
 ---
 
 # Story Adapter
 
-Transform work experiences into portfolio-ready content.
+Turn messy work experience into a portfolio-ready case study that shows impact WITHOUT leaking anything confidential — and that sounds like the user, not a résumé. Anonymization is built in, not a separate step.
 
-## Role
+## Before you start
 
-Take raw work stories and turn them into structured, anonymized case studies or highlights. Handle the tension between "show impact" and "protect confidentiality."
-
-## When to Use
-
-- Work achievements from employment
-- Consulting project stories
-- Any content that might need anonymization
-- Case studies, highlights, or achievements from jobs
-
-## When NOT to Use
-
-- Personal side projects (go to `/portfolio-copywriter`)
-- Public open-source work (no anonymization needed)
-- Website copy not tied to employment
+Read `CLAUDE.md` for the **Voice Profile** and **Source Material**. If no voice profile exists, suggest running `find-my-voice` first — content without it will sound generic.
 
 ## Process
 
-### Auto-Seed Mode (triggered by /setup)
+### 1. Get the story
 
-If called with a Notes folder path from the **Source Material** section in CLAUDE.md:
+Accept any format — paste, file, or memory. If thin, ask the four questions:
+- What was the situation? (industry, company type, your role)
+- What was the problem?
+- What did *you* specifically do?
+- What was the result?
 
-1. **Scan** notes folder for story files
-2. **Read** each file, extract what's there
-3. **Report findings** per story (found / partial / missing):
-   ```
-   ## Story Adapter: Extraction Report
+### 2. Structure as STAR
 
-   **Scanned:** docs/stories/ (3 files)
+Shape into **Situation → Task → Action → Result**. Keep the action focused on what the user actually did. Match the verbs to their voice profile (a marketer "reframed" and "launched"; a builder "shipped" — do not force "built" onto someone who doesn't build).
 
-   | File | Status | Situation | Task | Action | Result | Found |
-   |------|--------|-----------|------|--------|--------|-------|
-   | payments.md | Partial | ✓ | ✓ | ✓ | ✗ NEED | "Acme Corp" |
-   | pipeline.md | ✓ Ready | ✓ | ✓ | ✓ | ✓ | "Project Phoenix" |
-   | onboarding.md | Minimal | ✗ | Partial | ✗ | ✗ | None |
+### 3. Sensitivity scan (built in)
 
-   ### Story Candidates
+Scan the structured story for anything risky and flag each with a recommendation and a reason:
 
-   **1. Payment System Scale** (from payments.md) — Partial
-   - Problem: "System couldn't handle more than 1K TPS"
-   - Action: "Redesigned to event sourcing architecture"
-   - Outcome: [NEED: What was the result? New TPS?]
-   - Sensitivity: "Acme Corp" needs anonymization
+| Looks like | Default move | Why |
+|---|---|---|
+| Employer name (on their LinkedIn) | Keep | Public employment is usually fine |
+| Client name | Generalize ("a global retailer") | NDA risk unless public |
+| Internal codename / unreleased product | Remove | Not public |
+| Absolute metrics ($, users) tied to a named company | Convert to ratio ("4x", "exceeded target ~40%") | Protects confidential numbers |
+| Colleague / manager / stakeholder names | Remove | Never publish people you didn't ask |
+| Internal-only details, negative specifics (layoffs, politics) | Remove | Burns bridges, adds no credibility |
 
-   **2. Data Pipeline** (from pipeline.md) — Ready
-   - Problem: "Batch processing took 8 hours"
-   - Action: "Built real-time streaming pipeline"
-   - Outcome: "Reduced to 15 minutes"
-   - Sensitivity: "Project Phoenix" needs anonymization
+Present findings as **recommendations the user can accept wholesale** — "here's what I'd keep, generalize, and remove, and why; say 'apply all' or adjust any line." A non-expert should be able to accept the defaults and be safe without making a single call themselves. When in doubt, go safer — context can be added back later with approval.
 
-   **3. Onboarding Flow** (from onboarding.md) — Needs work
-   - Found: mentions "reduced onboarding time"
-   - Missing: problem context, specific actions, metrics
+**Never publish:** colleague names, NDA/unreleased info, proprietary methods, exact metrics tied to an identifiable company, client names without permission.
 
-   ### Questions for gaps:
-   - payments.md: "What TPS did you achieve after the redesign?"
-   - onboarding.md: "Tell me more — what was the problem? What did you do?"
+### 4. Apply voice + polish
 
-   ### Potential sensitivity (you decide):
-   - "Acme Corp" in payments.md — public employment? Or anonymize?
-   - "Project Phoenix" in pipeline.md — public project? Or internal codename?
+Rewrite in the user's voice profile. Show the process (how they approached it), not just outcomes — process is often more credible than numbers, and safer. One clear takeaway per story.
 
-   Options:
-   - Run `/anonymizer` to review each
-   - "Keep as-is" if already safe
-   - "Already anonymized" if you used placeholder names
-   ```
-4. **Return** report + candidates to /setup
+### 4b. Log what you hid (anonymization ledger)
 
-### Manual Mode (user invokes directly)
-
-#### 1. Check Source Material (CLAUDE.md first)
-
-**Check the Source Material section in CLAUDE.md for known sources:**
-- **Resume** — may have work achievements
-- **Notes** — may have story docs
-- **LinkedIn** — may have role descriptions
-
-If sources exist:
-> "I see you have notes at [path]. Should I look there for this story?"
-
-If sources empty or need different content, ask:
-
-**Option A: File/folder**
-> "Path to file? I'll read it."
-
-**Option B: Paste directly**
-> "Paste it here — any format works."
-
-**Option C: From memory**
-> "Tell me the story and I'll structure it."
-
-#### 2. Gather the Story
-
-If source material provided, extract key elements. If not, ask:
-- "What did you work on?"
-- "What was the problem/challenge?"
-- "What did you do specifically?"
-- "What was the outcome?"
-
-Accept any format: bullet points, paragraphs, resume snippets.
-
-### 2. Structure the Story (STAR)
-
-Use the STAR framework:
+For every item you masked, removed, or generalized, append a row to `ANONYMIZATION-LEDGER.md` in the working folder. Create it with this header if missing:
 
 ```
-## [Title — outcome-focused, not role-focused]
+# Anonymization Ledger — PRIVATE, never publish
+> Holds the real, unredacted originals so `refresh` can restore them when they become public.
+> Keep this gitignored and out of any deploy. Treat it like a password file.
 
-**Situation:** [Context — industry, company type, your role, what was happening]
-
-**Task:** [The problem or challenge you needed to solve]
-
-**Action:** [What YOU did — specific, builder-focused]
-
-**Result:** [Outcome — metrics, impact, what changed]
+| # | Original | In portfolio as | Where | Reason | Reveal when | Status |
+|---|----------|-----------------|-------|--------|-------------|--------|
 ```
 
-When extracting from source material, map to STAR:
-- Scan for **Situation** — context clues, role descriptions, company type
-- Scan for **Task** — problems mentioned, challenges, goals
-- Scan for **Action** — what the person did, built, shipped
-- Scan for **Result** — numbers, outcomes, impact statements
+Record the real original, what it became, where it appears, why, and the condition under which it could later be revealed (e.g. "when publicly announced"). Confirm it is listed in `.gitignore`. Never include this file in published output — it is the one file that, if leaked, undoes all the protection above.
 
-### 3. Supporting Artifacts
+### 5. Output and loop
 
-After structuring, ask:
+Deliver the finished case study. Then:
+> "Story added. Add another, or move on? When you've got 2–3, your portfolio's in good shape. Run **refresh** anytime you ship something new."
 
-> "Any public links for this story? Press releases, blog posts, release notes, documentation, videos, conference talks, demos?"
->
-> These help two ways:
-> - **Strengthen the story** — public evidence adds credibility
-> - **Inform sensitivity** — if there's a public artifact, it's clearly not confidential
+## Tip
 
-If provided, note them alongside the story. If not, move on — artifacts are optional.
-
-### 4. Sensitivity Scan (inline)
-
-After structuring, scan the STAR output for sensitive elements:
-- **Names** — company names, client names, colleague names
-- **Projects** — internal codenames, product names
-- **Metrics** — absolute numbers tied to identifiable companies
-
-**Report what you found — flag, don't classify.** You're spotting things that *look like* they might be sensitive. You don't know if they're public or internal.
-
-```
-### Sensitivity Scan
-
-| Found | Looks Like |
-|-------|------------|
-| "Acme Corp" | Company name |
-| "Project Phoenix" | Could be project/product name |
-| "$47M ARR" | Specific metric |
-
-Options:
-- "Keep as-is" — nothing needs changing
-- "Run /anonymizer" — for detailed review and transformation
-- Tell me what to change — e.g., "anonymize Acme Corp, keep the metric"
-```
-
-**Do NOT auto-escalate to `/anonymizer`.** The user decides whether the findings warrant a full anonymization pass. Many stories are already safe enough.
-
-### 5. Apply Changes (if requested)
-
-If user requested changes:
-- Replace company names per user preference
-- Convert absolute metrics to ratios/percentages
-- Generalize project names if needed
-- Keep industry context for credibility
-
-If user said "keep as-is" — move on.
-
-### 6. Polish
-
-Ensure:
-- Builder voice ("I built" not "I managed")
-- Specific details (not vague abstractions)
-- Tension/story arc (problem → action → result)
-- One clear takeaway
-
-## Output Format
-
-```
-## Story: [Title]
-
-**Sensitivity:** [None/Light/Medium/Heavy applied]
-**Anonymization:** [What was changed and why]
-
----
-
-[Structured case study content]
-
----
-
-**Ready for:** `/voice-guardian` tone check, then `/quality-check`
-```
-
-## Story Loop
-
-After each story is structured and polished, prompt the user:
-
-```
-Story added. You have [N] stories so far.
-
-Suggestion: At least 1 story per role/position makes a strong portfolio.
-
-Options:
-- "Add another" — tell me the next story (STAR)
-- "That's enough for now" — move to /voice-guardian for tone check (you can always add more stories later)
-```
-
-Loop until user says done. Then recommend `/voice-guardian` for tone review on all content so far (hero, about, stories, highlights — everything).
-
-## Integration
-
-**Invoked by:**
-- `/content-strategist` — for work-related content
-- User directly — when they have a work story
-
-**May invoke (only if user requests):**
-- `/anonymizer` — for detailed sensitivity review
-
-**Hands off to:**
-- `/voice-guardian` — tone check on ALL content (stories, hero, about, highlights — everything so far)
-- `/quality-check` — final gate on ALL content
-
-## Tips
-
-- **Impact without identification** — You can show impressive results without revealing the company
-- **Process over outcomes** — How you approached it is often more interesting than the numbers
-- **Transferable lessons** — What would you do the same/differently?
+Impact without identification is the whole game. "Cut enterprise onboarding from 6 weeks to 3 days at a B2B SaaS company" is strong AND safe. You rarely need the logo to land the point.

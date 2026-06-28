@@ -16,6 +16,7 @@ Custom skills live in `.claude/skills/`. Invoke with `/skill-name`.
 | Task | Skill | Type |
 |------|-------|------|
 | First-time setup | `/setup` | builder |
+| Find your voice | `/find-my-voice` | builder |
 | Add content | `/content-strategist` | builder |
 | Write copy | `/portfolio-copywriter` | builder |
 | Work stories | `/story-adapter` | builder |
@@ -24,8 +25,11 @@ Custom skills live in `.claude/skills/`. Invoke with `/skill-name`.
 | Voice & tone check | `/voice-guardian` | evaluator |
 | SEO & performance | `/web-content-optimizer` | evaluator |
 | Final gate | `/quality-check` | evaluator |
+| Keep it current | `/refresh` | builder |
 | Improve builder skills | `/skill-improver-builder` | meta |
 | Improve evaluator skills | `/skill-improver-evaluator` | meta |
+
+**Suggested order (the skills coordinate as a loop):** `/setup` → `/find-my-voice` → `/content-strategist` → `/story-adapter` / `/portfolio-copywriter` → `/voice-guardian` → `/web-content-optimizer` → `/anonymizer` (optional) → `/quality-check` → publish in your own builder → `/refresh` (loops back). Run `/setup` + `/find-my-voice` once; end every piece with `/voice-guardian` → `/quality-check`. Design and build the site with whatever tool you like — `/website-expert` can help if you want, but it's optional.
 
 ## Voice Profile
 
