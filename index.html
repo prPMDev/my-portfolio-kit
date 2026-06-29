@@ -17,272 +17,418 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio Kit - Learn to Build with AI</title>
-    <meta name="description" content="Learn to build with AI. Ship a portfolio along the way. Not a template. Not magic. You do the work — AI helps you move.">
+    <title>My Portfolio Kit — A first cut fast, then sharpen on repeat</title>
+    <meta name="description" content="Building a portfolio got cheap. The content, and keeping it true, didn't. A coordinated set of Claude skills that gets your real work to a sharp first cut, then sharpens it on a loop — always in your voice. Bring your own site builder.">
 
     <!-- Open Graph / Social Sharing -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="My Portfolio Kit">
-    <meta property="og:description" content="Your story is more than a bullet point. Tell it your way.">
+    <meta property="og:description" content="A first cut fast, then sharpen on repeat. Claude skills that turn your real work into portfolio content that sounds like you — and keep it current.">
     <meta property="og:url" content="https://prpmdev.github.io/my-portfolio-kit/">
     <meta property="og:image" content="https://prpmdev.github.io/my-portfolio-kit/og-image.png">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="My Portfolio Kit">
-    <meta name="twitter:description" content="Your story is more than a bullet point. Tell it your way.">
+    <meta name="twitter:description" content="A first cut fast, then sharpen on repeat. Claude skills that turn your real work into portfolio content that sounds like you — and keep it current.">
     <meta name="twitter:image" content="https://prpmdev.github.io/my-portfolio-kit/og-image.png">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="landing.css">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body>
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <!-- Terminal Demo (left side) -->
-            <div class="hero-media">
-                <div class="terminal-demo">
-                    <div class="terminal-header">
-                        <span class="terminal-dot red"></span>
-                        <span class="terminal-dot yellow"></span>
-                        <span class="terminal-dot green"></span>
-                        <span class="terminal-title">claude</span>
-                    </div>
-                    <div class="terminal-body" id="terminal-content">
-                        <!-- Populated by JS -->
-                    </div>
-                </div>
-            </div>
 
-            <!-- Content (right side) -->
-            <div class="hero-content">
-                <h1>My Portfolio Kit</h1>
-                <p>Build a portfolio. Learn along the way.</p>
-                <p>Not a template. Not magic. You do the work — AI helps you move.</p>
-
-                <p class="hero-pitch">Not Lovable. Not Replit. Their agents, their directives.<br>
-                <em>Your</em> skills. You control what they do.</p>
-
-                <p class="hero-flow">Setup → Adapt stories → Anonymize → Write copy → Check voice → Optimize → Publish</p>
-
-                <p class="hero-branding">Built by <a href="https://prpmdev.github.io/prashant-rana/">a PM who doesn't abandon ship after shipping</a>. <a href="https://prpmdev.github.io/prashant-rana/" style="opacity:0.7;">See the portfolio built with this kit →</a></p>
-
-                <div class="cta-buttons">
-                    <a href="#quick-start" class="btn btn-primary" onclick="gtag('event', 'click', {event_category: 'CTA', event_label: 'Get Started'})">Get Started</a>
-                    <a href="https://github.com/prpmdev/my-portfolio-kit" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'click', {event_category: 'CTA', event_label: 'Star on GitHub'})">★ GitHub</a>
-                    <a href="https://www.linkedin.com/in/prashant-rana/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'click', {event_category: 'CTA', event_label: 'LinkedIn'})">Message</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Catalog -->
-        <section id="skills" class="skills">
-            <h2>Skills <span id="skill-count"></span></h2>
-            <div class="skills-legend">
-                <a href="#builder" class="legend-item"><span class="legend-dot builder"></span> Builder — creates or transforms</a>
-                <a href="#evaluator" class="legend-item"><span class="legend-dot evaluator"></span> Evaluator — reviews and grades</a>
-                <a href="#meta" class="legend-item"><span class="legend-dot meta"></span> Meta — improves other skills</a>
-                <a href="#" class="legend-item legend-show-all" style="display:none">Show all</a>
-            </div>
-            <div id="skills-grid" class="skills-grid">
-                <!-- Populated by JavaScript -->
-            </div>
-        </section>
-
-        <!-- Quick Start -->
-        <section id="quick-start" class="quick-start">
-            <h2>Quick Start</h2>
-            <p class="quick-start-intro"><a href="#" class="workflow-link" onclick="showWorkflow(); return false;">See suggested workflow</a> or dive right in:</p>
-
-            <!-- Setup Tabs - Full Width -->
-            <div class="setup-tabs">
-                <button class="setup-tab active" onclick="switchSetupTab('desktop', this)">Desktop</button>
-                <button class="setup-tab" onclick="switchSetupTab('terminal', this)">Terminal</button>
-            </div>
-
-            <!-- Two Column Layout: Steps + Prerequisites -->
-            <div class="quick-start-layout">
-                <!-- Steps (left side) -->
-                <div class="quick-start-steps">
-                    <!-- Desktop Steps (default) -->
-                    <div id="setup-desktop" class="setup-content active">
-                        <div class="steps">
-                            <div class="step">
-                                <span class="step-number">1</span>
-                                <div class="step-content">
-                                    <h3>Get the kit</h3>
-                                    <p><a href="https://github.com/prpmdev/my-portfolio-kit/archive/refs/heads/main.zip" target="_blank" rel="noopener noreferrer">Download ZIP</a> — no account needed</p>
-                                    <p class="step-alt">Have GitHub? <a href="https://github.com/prpmdev/my-portfolio-kit/fork" target="_blank" rel="noopener noreferrer">Fork</a> · <a href="https://github.com/prpmdev/my-portfolio-kit/generate" target="_blank" rel="noopener noreferrer">Use template</a> (skip to step 3)</p>
-                                </div>
-                            </div>
-                            <div class="step">
-                                <span class="step-number">2</span>
-                                <div class="step-content">
-                                    <h3>Extract and rename</h3>
-                                    <p>Unzip. Rename folder to <code>my-portfolio</code> (or your name).</p>
-                                </div>
-                            </div>
-                            <div class="step">
-                                <span class="step-number">3</span>
-                                <div class="step-content">
-                                    <h3>Open in Claude Desktop</h3>
-                                    <p>Open the folder. Type <code>/</code> to see available skills.</p>
-                                </div>
-                            </div>
-                            <div class="step">
-                                <span class="step-number">4</span>
-                                <div class="step-content">
-                                    <h3>Run setup</h3>
-                                    <pre><code>/setup</code></pre>
-                                </div>
-                            </div>
-                            <div class="step">
-                                <span class="step-number">5</span>
-                                <div class="step-content">
-                                    <h3>Start building</h3>
-                                    <pre><code>/content-strategist</code></pre>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Terminal Steps -->
-                    <div id="setup-terminal" class="setup-content">
-                        <div class="steps">
-                            <div class="step">
-                                <span class="step-number">1</span>
-                                <div class="step-content">
-                                    <h3>Get the kit</h3>
-                                    <pre><code>git clone https://github.com/prpmdev/my-portfolio-kit.git my-portfolio
-cd my-portfolio</code></pre>
-                                    <p class="step-alt">Or: <a href="https://github.com/prpmdev/my-portfolio-kit/fork" target="_blank" rel="noopener noreferrer">Fork</a> · <a href="https://github.com/prpmdev/my-portfolio-kit/generate" target="_blank" rel="noopener noreferrer">Use template</a> — then clone your copy</p>
-                                </div>
-                            </div>
-                            <div class="step">
-                                <span class="step-number">2</span>
-                                <div class="step-content">
-                                    <h3>Run setup</h3>
-                                    <pre><code>claude
-/setup</code></pre>
-                                </div>
-                            </div>
-                            <div class="step">
-                                <span class="step-number">3</span>
-                                <div class="step-content">
-                                    <h3>Start building</h3>
-                                    <pre><code>/content-strategist</code></pre>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Prerequisites (right side) -->
-                <aside class="prerequisites">
-                    <p><strong>What you need</strong></p>
-                    <ul>
-                        <li><a href="https://claude.ai/pricing" target="_blank" rel="noopener noreferrer">Claude Pro</a> ($20/month or higher)</li>
-                        <li id="prereq-install"><a href="https://claude.ai/download" target="_blank" rel="noopener noreferrer">Claude Desktop app</a></li>
-                    </ul>
-                </aside>
-            </div>
-        </section>
-
-        <!-- Install as a plugin -->
-        <section id="install-cowork" class="install-cowork">
-            <h2>Install as a plugin</h2>
-            <p class="install-intro">The kit is packaged as a Claude plugin. Today it installs through <strong>Claude Code</strong>; a no-terminal install inside Claude Cowork will follow once Cowork supports custom plugins.</p>
-
-            <div class="install-options">
-                <div class="install-option">
-                    <h3>Claude Code <span class="install-badge">works today</span></h3>
-                    <p>Two commands — add the marketplace, then install:</p>
-                    <div class="install-url">
-                        <code>claude plugin marketplace add prpmdev/my-portfolio-kit</code>
-                        <button type="button" class="copy-btn" onclick="navigator.clipboard.writeText('claude plugin marketplace add prpmdev/my-portfolio-kit');this.textContent='Copied';setTimeout(()=>this.textContent='Copy',1500);if(window.gtag)gtag('event','click',{event_category:'Install',event_label:'Copy marketplace cmd'});">Copy</button>
-                    </div>
-                    <div class="install-url" style="margin-top:8px;">
-                        <code>claude plugin install portfolio-kit@portfolio-kit</code>
-                        <button type="button" class="copy-btn" onclick="navigator.clipboard.writeText('claude plugin install portfolio-kit@portfolio-kit');this.textContent='Copied';setTimeout(()=>this.textContent='Copy',1500);if(window.gtag)gtag('event','click',{event_category:'Install',event_label:'Copy install cmd'});">Copy</button>
-                    </div>
-                </div>
-
-                <div class="install-option">
-                    <h3>Claude Cowork <span class="install-badge" style="color:#888;background:#f0f0f0;">coming</span></h3>
-                    <p>Cowork doesn't install custom plugins yet — only Anthropic's curated marketplace. The kit is already packaged, so a one-click Cowork install will work the moment that opens up.</p>
-                </div>
-            </div>
-
-            <p class="install-then">Either way: run <strong>setup</strong>, then just say <em>"help me build my portfolio."</em></p>
-        </section>
-
-        <!-- Feedback Section -->
-        <section id="feedback" class="feedback-section">
-            <p>Found a bug or have ideas? <a href="https://github.com/prpmdev/my-portfolio-kit/issues" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'click', {event_category: 'Feedback', event_label: 'GitHub Issues'})">Open an issue</a> — I actually want to hear it.</p>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <p class="footer-copyright">&copy; <span id="year"></span> <a href="https://prpmdev.github.io/prashant-rana/">Prashant Rana</a></p>
-        </footer>
-    </main>
-
-    <script src="landing.js"></script>
-
-    <!-- Workflow Modal -->
-    <div id="workflow-modal" class="modal" onclick="closeWorkflow(event)">
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <button class="modal-close" onclick="closeWorkflow()">&times;</button>
-            <h3>Suggested Workflow</h3>
-            <p class="modal-subtitle">First portfolio? Follow this path.</p>
-            <div class="workflow-diagram">
-                <div class="workflow-step">
-                    <div class="workflow-box builder">/setup</div>
-                    <span class="workflow-label">one-time setup</span>
-                    <span class="workflow-arrow">↓</span>
-                </div>
-                <div class="workflow-loop">
-                    <div class="loop-bracket"></div>
-                    <div class="loop-content">
-                        <div class="workflow-step">
-                            <div class="workflow-box builder">/content-strategist</div>
-                            <span class="workflow-arrow">↓</span>
-                        </div>
-                        <div class="workflow-step">
-                            <div class="workflow-box builder">/story-adapter</div>
-                            <span class="workflow-arrow">↓</span>
-                        </div>
-                        <div class="workflow-step">
-                            <div class="workflow-box both">/anonymizer</div>
-                            <span class="workflow-label">if needed</span>
-                            <span class="workflow-arrow">↓</span>
-                        </div>
-                        <div class="workflow-step">
-                            <div class="workflow-box builder">/portfolio-copywriter</div>
-                            <span class="workflow-arrow">↓</span>
-                        </div>
-                        <div class="workflow-step">
-                            <div class="workflow-box builder">/website-expert</div>
-                            <span class="workflow-arrow">↓</span>
-                        </div>
-                        <div class="workflow-step">
-                            <div class="workflow-box evaluator">/voice-guardian</div>
-                            <span class="workflow-arrow">↓</span>
-                        </div>
-                        <div class="workflow-step">
-                            <div class="workflow-box evaluator">/web-content-optimizer</div>
-                            <span class="workflow-arrow">↓</span>
-                        </div>
-                        <div class="workflow-step">
-                            <div class="workflow-box evaluator">/quality-check</div>
-                            <span class="workflow-label">publish</span>
-                        </div>
-                    </div>
-                    <span class="loop-label">repeat for<br>new content</span>
-                </div>
-            </div>
-        </div>
+  <!-- ============ NAV ============ -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a class="brand" href="#top">
+        <span class="brand__mark"></span>
+        <span class="brand__name">My Portfolio Kit</span>
+      </a>
+      <div class="nav__links">
+        <a class="nav__link" href="#proof">See it run</a>
+        <a class="nav__link" href="#why">Why it's different</a>
+        <a class="nav__link" href="https://github.com/prpmdev/my-portfolio-kit">GitHub</a>
+        <a class="nav__cta" href="#kit">Get the skills</a>
+      </div>
     </div>
+  </nav>
+
+  <span id="top"></span>
+
+  <!-- ============ HERO — THE SHIFT ============ -->
+  <header class="container hero">
+    <div class="hero__inner">
+      <div class="eyebrow-pill"><span class="dot"></span>The portfolio problem moved</div>
+      <h1 class="h1">Building a portfolio got cheap.<br><span class="hl">The content</span>, and keeping it true, didn't.</h1>
+      <p class="hero__lede">Other AI tools write your portfolio <em>for</em> you, in one shot. Here you get a fast first cut, then keep sharpening it until it sounds like you. You bring your own site builder.</p>
+      <p class="hero__audience">For people with real work worth showing: PMs, marketers, consultants, and builders who want a portfolio that sounds like them and doesn't go stale.</p>
+      <div class="cta-row">
+        <a class="btn btn--primary btn--shadow" href="#kit">Get the skills</a>
+        <a class="btn btn--outline" href="#proof">Watch it sharpen, pass by pass ↓</a>
+      </div>
+      <div class="hero__microcopy">MIT-licensed, free &amp; open source · drop it into Claude's skills folder · bring your own site builder</div>
+    </div>
+  </header>
+
+  <!-- ============ PROOF — THE INTERACTIVE DEMO ============ -->
+  <section id="proof" class="proof">
+    <div class="container">
+      <div class="proof__head">
+        <div class="eyebrow">Show the loop, not a one-shot</div>
+        <h2 class="h2 h2--proof">You write it rough.<br>It comes back sharp, pass after pass.</h2>
+        <p class="proof__lede">Other tools generate a finished page in one shot. Here you get a fast first cut, then run it through the loop until it's sharp and still sounds like you. It all runs inside Claude Code, or the Claude desktop app.</p>
+      </div>
+
+      <div class="demo" id="demo">
+        <div class="demo__bar">
+          <span class="demo__avatar">✦</span>
+          <span class="demo__skill">portfolio-copywriter</span>
+          <span class="demo__tag">skill</span>
+          <span class="demo__counter"><span class="dot"></span><span id="demo-counter">pass 1 of 2</span></span>
+        </div>
+
+        <div class="demo__body">
+          <div class="demo__user">
+            <div class="demo__user-label">You</div>
+            <div class="demo__user-bubble" id="demo-input"></div>
+          </div>
+
+          <div class="demo__assistant">
+            <span class="demo__assistant-avatar">✦</span>
+            <div class="demo__col">
+              <div class="demo__stage" id="demo-stage"></div>
+              <div class="demo__result" id="demo-text"></div>
+              <div class="demo__note" id="demo-note"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="demo__footer">
+          <div class="demo__progress-row">
+            <div class="demo__track"><div class="demo__fill" id="demo-fill"></div></div>
+            <span class="demo__flow">draft → voice-check → optimize → repeat</span>
+          </div>
+          <div class="demo__actions">
+            <button class="demo__btn" id="demo-btn" type="button">Run the next pass →</button>
+          </div>
+        </div>
+      </div>
+
+      <p class="proof__caption"><strong>Same line. Sharper each pass. Always your voice.</strong> Run it as many times as it takes, then again whenever your work changes.</p>
+    </div>
+  </section>
+
+  <!-- ============ WHY IT'S DIFFERENT — 3 PILLARS ============ -->
+  <section id="why" class="section section--alt why">
+    <div class="container section__inner">
+      <div class="eyebrow">Why it's different</div>
+      <h2 class="h2" style="margin-bottom:34px;">Three things a one-shot<br>generator can't do.</h2>
+
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar__num">01</div>
+          <h3 class="pillar__title">First cut fast, then sharpen on repeat</h3>
+          <p class="pillar__body">Draft a B+ version in minutes, then sharpen it on a loop, voice-check, optimize, repeat, as many passes as it takes.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar__num">02</div>
+          <h3 class="pillar__title">Sounds like you, every pass</h3>
+          <p class="pillar__body">Built from what you've actually written, and re-checked every pass. No template tone, no dropdown of professional, friendly, bold.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar__num">03</div>
+          <h3 class="pillar__title">Gets sharper the more you use it</h3>
+          <p class="pillar__body">Every story you run adds to what the kit knows about your work and voice. A one-shot tool starts from zero each time; this one compounds.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS — THE LOOP ============ -->
+  <section class="section">
+    <div class="container section__inner">
+      <div class="eyebrow">How it works · the loop</div>
+      <h2 class="h2" style="margin-bottom:14px;">A first cut fast,<br>then sharpen on repeat.</h2>
+      <p class="loop__lede">A set of coordinated skills, not one big generator: a fast first cut, then a tight loop of draft, voice-check, optimize, repeated until it's sharp.</p>
+
+      <div class="loop">
+        <div class="loop__caption">Set up once: profile, then find your voice. Then, per piece and over time, each step is a skill:</div>
+        <div class="loop__row">
+          <div class="step">
+            <div class="step__num">01</div>
+            <div class="step__verb">route</div>
+            <div class="step__desc">what goes where</div>
+            <div class="step__skill">content-strategist</div>
+          </div>
+          <div class="step step--peach">
+            <div class="step__num">02</div>
+            <div class="step__verb">draft</div>
+            <div class="step__desc">a fast first cut</div>
+            <div class="step__skill">story-adapter<br>portfolio-copywriter</div>
+          </div>
+          <div class="step step--peach">
+            <div class="step__num">03</div>
+            <div class="step__verb">voice-check</div>
+            <div class="step__desc">sounds like you</div>
+            <div class="step__skill">voice-guardian</div>
+          </div>
+          <div class="step step--peach">
+            <div class="step__num">04</div>
+            <div class="step__verb">optimize</div>
+            <div class="step__desc">web-ready, sharp</div>
+            <div class="step__skill">web-content-optimizer</div>
+          </div>
+          <div class="loop__repeat">
+            <span><span class="glyph">↺</span>repeat</span>
+          </div>
+          <div class="step">
+            <div class="step__num">05</div>
+            <div class="step__verb">gate</div>
+            <div class="step__desc">a final quality check</div>
+            <div class="step__skill">quality-check</div>
+          </div>
+          <div class="step step--publish">
+            <div class="step__num">06</div>
+            <div class="step__verb">publish</div>
+            <div class="step__desc">content ready</div>
+          </div>
+        </div>
+        <div class="loop__heartbeat"><strong>The inner loop is the heartbeat:</strong> draft, voice-check, optimize, run as many passes as it takes. Gate and publish come only once it's sharp.</div>
+        <div class="loop__refresh">
+          <span class="loop__refresh-glyph">↺</span>
+          <div class="loop__refresh-text"><span class="tag">refresh</span><span class="body">: ship new work or change roles, and it loops back to the top. The content stays sharp; it never rots.</span></div>
+        </div>
+        <div class="loop__ship">Then it's yours to ship: design and build happen outside this loop, in any tool you like (v0, Framer, Webflow, plain HTML, your designer).</div>
+        <div class="loop__anon">Optional, anytime: an <span class="mono-inline">anonymizer</span> pass for the rare case there's something sensitive. It isn't part of the everyday loop.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT THIS ISN'T ============ -->
+  <section class="section">
+    <div class="container section__inner">
+      <div class="eyebrow eyebrow--muted">Plainly</div>
+      <h2 class="h2" style="margin-bottom:32px;">What this isn't.</h2>
+
+      <div class="notisnt-grid">
+        <div class="notisnt">
+          <div class="notisnt__title">Not a site builder</div>
+          <p class="notisnt__body">Bring your own (v0, Framer, Webflow, plain HTML, a designer), or let a coding tool like Claude Code or Cursor build it for you. The kit makes the words and keeps them current; you pick how the site gets built.</p>
+        </div>
+        <div class="notisnt">
+          <div class="notisnt__title">Not a template you clone</div>
+          <p class="notisnt__body">You don't pick a theme and pour yourself in. You bring your work; the words come out sounding like you.</p>
+        </div>
+        <div class="notisnt">
+          <div class="notisnt__title">Not magic that does it for you</div>
+          <p class="notisnt__body">It does the craft and the upkeep <em>with</em> you. You make the calls, and pick up how AI works on something you actually need.</p>
+        </div>
+      </div>
+
+      <p class="notisnt__close">I built this for my own portfolio. It worked, so I'm sharing it with whoever wants it.</p>
+    </div>
+  </section>
+
+  <!-- ============ A REAL ONE, IN THE WILD (DARK) ============ -->
+  <section class="section--dark">
+    <div class="container section__inner" style="padding-top:62px; padding-bottom:66px;">
+      <div class="eyebrow eyebrow--ondark">A real one, in the wild</div>
+      <h2 class="h2">Proof it works,<br>and it keeps getting better.</h2>
+      <p class="real__lede">Not a mockup. A real portfolio whose words came from the kit, kept sharp ever since. The site itself I designed and built myself, the way you will. Every time I ship new work, the content gets refreshed.</p>
+
+      <div class="browser">
+        <div class="browser__chrome">
+          <span class="tl tl--r"></span>
+          <span class="tl tl--y"></span>
+          <span class="tl tl--g"></span>
+          <span class="browser__url">prashantrana.xyz</span>
+        </div>
+        <div class="browser__shot">
+          <img class="base" src="portfolio-proof.png" alt="A real portfolio built and maintained with the kit">
+          <img class="blur" src="portfolio-proof.png" aria-hidden="true" alt="">
+          <div class="browser__fade"></div>
+          <div class="browser__cta">
+            <a href="https://prpmdev.github.io/prashant-rana/">Visit the live portfolio →</a>
+            <span>the real thing — kept current with the kit</span>
+          </div>
+        </div>
+      </div>
+      <div class="real__more">
+        <p>Shipped yours with the kit? Let me know — I'll feature it if I can.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GET IT — HONEST INSTALL ============ -->
+  <section id="kit" class="section section--alt">
+    <div class="container section__inner">
+      <div class="eyebrow">Get it</div>
+      <h2 class="h2" style="margin-bottom:12px;">Grab the skills.<br>No install ceremony.</h2>
+      <p class="install__lede">It's a set of Claude skills, not a plugin and not a marketplace. Three steps and you're working.</p>
+
+      <div class="install-grid">
+        <div class="install-card">
+          <div class="install-card__tag"><span class="dot"></span>Works today</div>
+          <div class="steps">
+            <div class="step-row">
+              <span class="step-row__n">1</span>
+              <div class="step-row__t"><strong>Grab.</strong> Download the ZIP or clone the repo (or copy just the skill folders you want).</div>
+            </div>
+            <div class="step-row">
+              <span class="step-row__n">2</span>
+              <div class="step-row__t"><strong>Drop in.</strong> Put them in your project's <span class="code">.claude/skills/</span>, or <span class="code">~/.claude/skills/</span> to have them in every project.</div>
+            </div>
+            <div class="step-row">
+              <span class="step-row__n">3</span>
+              <div class="step-row__t"><strong>Use.</strong> Say <span class="code">help me build my portfolio</span> and follow the path for what you're doing.</div>
+            </div>
+          </div>
+          <p class="install-card__note">Runs in Claude Code, or Claude Cowork on Desktop.</p>
+          <div class="install-card__btns">
+            <a class="btn btn--primary btn--sm" href="https://github.com/prpmdev/my-portfolio-kit/archive/refs/heads/main.zip">Download the skills ↓</a>
+            <a class="btn btn--ghost btn--sm" href="https://github.com/prpmdev/my-portfolio-kit">View on GitHub →</a>
+          </div>
+        </div>
+
+        <div class="install-side">
+          <div class="side-card">
+            <h3>Bring your own builder</h3>
+            <p>v0, Framer, Webflow, plain HTML, a designer. The kit hands you finished words and keeps them current; you handle design and build.</p>
+          </div>
+          <div class="side-card side-card--dashed">
+            <h3>One-click Cowork install</h3>
+            <p>Not yet. Claude Cowork doesn't support custom plugins, so there's no button to click. If that changes, I'll add one.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- pick your path -->
+      <div class="paths">
+        <div class="paths__head">
+          <h3 class="paths__title">Pick your path</h3>
+          <span class="paths__hint">the skills are linked, run them in order</span>
+        </div>
+        <p class="paths__lede">You don't run every skill every time. Pick the route for what you're doing, left to right.</p>
+
+        <div class="path">
+          <div class="path__label">Whole portfolio, first time</div>
+          <div class="path__chips">
+            <a class="chip" href="https://github.com/prpmdev/my-portfolio-kit/tree/main/.claude/skills/setup" target="_blank" rel="noopener">setup</a>
+            <a class="chip" href="https://github.com/prpmdev/my-portfolio-kit/tree/main/.claude/skills/find-my-voice" target="_blank" rel="noopener">find-my-voice</a>
+            <a class="chip" href="https://github.com/prpmdev/my-portfolio-kit/tree/main/.claude/skills/content-strategist" target="_blank" rel="noopener">content-strategist</a>
+            <a class="chip" href="https://github.com/prpmdev/my-portfolio-kit/tree/main/.claude/skills/story-adapter" target="_blank" rel="noopener">story-adapter</a>
+            <a class="chip" href="https://github.com/prpmdev/my-portfolio-kit/tree/main/.claude/skills/portfolio-copywriter" target="_blank" rel="noopener">portfolio-copywriter</a>
+            <a class="chip" href="https://github.com/prpmdev/my-portfolio-kit/tree/main/.claude/skills/voice-guardian" target="_blank" rel="noopener">voice-guardian</a>
+            <a class="chip" href="https://github.com/prpmdev/my-portfolio-kit/tree/main/.claude/skills/web-content-optimizer" target="_blank" rel="noopener">web-content-optimizer</a>
+            <a class="chip" href="https://github.com/prpmdev/my-portfolio-kit/tree/main/.claude/skills/quality-check" target="_blank" rel="noopener">quality-check</a>
+            <span class="path__after">→ then hand the content to your builder</span>
+          </div>
+        </div>
+        <div class="path">
+          <div class="path__label">Just one story</div>
+          <div class="path__chips">
+            <a class="chip" href="https://github.com/prpmdev/my-portfolio-kit/tree/main/.claude/skills/story-adapter" target="_blank" rel="noopener">story-adapter</a>
+            <a class="chip" href="https://github.com/prpmdev/my-portfolio-kit/tree/main/.claude/skills/voice-guardian" target="_blank" rel="noopener">voice-guardian</a>
+            <a class="chip" href="https://github.com/prpmdev/my-portfolio-kit/tree/main/.claude/skills/quality-check" target="_blank" rel="noopener">quality-check</a>
+            <span class="path__after">→ paste into your site</span>
+          </div>
+        </div>
+        <div class="path">
+          <div class="path__label">Just the words (hero, about)</div>
+          <div class="path__chips">
+            <a class="chip" href="https://github.com/prpmdev/my-portfolio-kit/tree/main/.claude/skills/portfolio-copywriter" target="_blank" rel="noopener">portfolio-copywriter</a>
+            <a class="chip" href="https://github.com/prpmdev/my-portfolio-kit/tree/main/.claude/skills/voice-guardian" target="_blank" rel="noopener">voice-guardian</a>
+            <span class="path__after">uses your saved voice</span>
+          </div>
+        </div>
+        <div class="path">
+          <div class="path__label">Keeping it current</div>
+          <div class="path__chips">
+            <a class="chip" href="https://github.com/prpmdev/my-portfolio-kit/tree/main/.claude/skills/refresh" target="_blank" rel="noopener">refresh</a>
+            <span class="path__after">pulls in the right steps and loops you back</span>
+          </div>
+        </div>
+        <div class="path">
+          <div class="path__label">Optional, anytime</div>
+          <div class="path__chips">
+            <a class="chip" href="https://github.com/prpmdev/my-portfolio-kit/tree/main/.claude/skills/anonymizer" target="_blank" rel="noopener">anonymizer</a>
+            <span class="path__after">a sensitivity pass for anything you're unsure about</span>
+          </div>
+        </div>
+
+        <p class="paths__rules">Two rules of thumb: run <span class="code">setup</span> and <span class="code">find-my-voice</span> once, and always end a piece with <span class="code">voice-guardian</span>, then <span class="code">quality-check</span>, before it goes live.</p>
+      </div>
+
+      <!-- honest fine print -->
+      <div class="fineprint">
+        <div>
+          <div class="fineprint__label">What you bring</div>
+          <div class="fineprint__pills">
+            <span class="pill">Your résumé</span>
+            <span class="pill">A few real work stories</span>
+            <span class="pill">A writing sample or two</span>
+          </div>
+          <p class="fineprint__note">The writing samples do real work: they're how it learns to sound like you.</p>
+        </div>
+        <div>
+          <div class="fineprint__label">The tools</div>
+          <div class="fineprint__pills">
+            <span class="pill">Claude Pro · $20/mo</span>
+            <span class="pill">Claude Code or desktop app</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AUTHORITY — WHO MADE IT ============ -->
+  <section class="section">
+    <div class="container section__inner">
+      <div class="eyebrow">The method, and who worked it out</div>
+      <div class="author-grid">
+        <div>
+          <div class="author__head">
+            <span class="author__photo" role="img" aria-label="Prashant Rana">PR</span>
+            <div>
+              <h2 class="author__name">Prashant Rana</h2>
+              <div class="author__role">Product manager · built the kit</div>
+            </div>
+          </div>
+          <div class="author__links">
+            <a href="https://prpmdev.github.io/prashant-rana/">Portfolio</a>
+            <a href="https://www.linkedin.com/in/prashant-rana/">LinkedIn</a>
+            <a href="https://github.com/prpmdev/my-portfolio-kit">GitHub</a>
+          </div>
+        </div>
+        <div class="author__bio">
+          <p>It started with my own portfolio, and one question: <em>how do I turn real work into content that sounds like me, and keep it that way as I grow?</em></p>
+          <p>So I worked it out, voice extraction, the polish loop, the refresh that keeps it current, and packaged it as skills you run yourself. Found a rough edge? Tell me; I want to hear it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="brand__mark"></span>
+        <span class="brand__name">My Portfolio Kit</span>
+      </div>
+      <div class="footer__links">
+        <a href="#proof">See it run</a>
+        <a href="https://prpmdev.github.io/my-portfolio-kit/">Homepage</a>
+        <a href="#kit">Get the skills</a>
+        <a href="https://github.com/prpmdev/my-portfolio-kit/issues">Report a bug</a>
+        <span class="footer__legal">MIT · © Prashant Rana</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="landing.js"></script>
 </body>
 </html>
