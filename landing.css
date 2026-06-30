@@ -846,6 +846,16 @@ a { color: inherit; }
 .footer__links a:hover { color: var(--text); }
 .footer__legal { font: 400 13px/1 var(--font-mono); color: var(--text-4); }
 
+/* license link — subtle, inherits surrounding color, accent on hover */
+.license-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  transition: color .15s ease;
+}
+.license-link:hover { color: var(--accent); }
+
 /* ============================ RESPONSIVE ============================ */
 @media (max-width: 860px) {
   .install-grid { grid-template-columns: 1fr; }
