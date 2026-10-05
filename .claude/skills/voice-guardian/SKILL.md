@@ -1,6 +1,5 @@
 ---
 name: voice-guardian
-version: 1.0.0
 description: Review content for voice and tone. Catches corporate speak, ensures authentic voice matching your profile.
 argument-hint: "[content to review]"
 ---
@@ -15,19 +14,9 @@ Ensure consistent, authentic voice across all public content. Catch generic corp
 
 ## Target Voice
 
-**First:** Read the **Voice Profile** section in CLAUDE.md (under `Style:`). If not set, infer from content or ask.
+**First:** Read `## Voice Profile` in CLAUDE.md and review against its specific fields: **Opens with**, **Sentence style**, **Signature phrases**, **Leans into**, **Avoids**, and **Sample lines** (the closest thing to ground truth — does the draft sound like those?). If there's no profile, suggest `/find-my-voice` first.
 
-### Voice by Profile
-
-| Profile | Sounds Like | Signals |
-|---------|-------------|---------|
-| **Builder** | "I noticed X wasn't working, so I built Y" | Ships things, shows work, hands-on |
-| **Strategist** | "I saw the gap between X and Y, so I reframed the problem" | Big picture, bets, direction |
-| **Executor** | "The process was broken — I redesigned it and we hit the deadline" | Gets things done, reliability, throughput |
-| **Technical** | "The architecture couldn't handle X, so I redesigned the data layer" | Deep systems thinking, hard problems |
-| **Mix** | Blend of above — lean into the 2-3 selected | Varies by story |
-
-### Universal (all profiles)
+### Universal (every voice)
 
 **Always:**
 - Clear and direct (no fluff)
@@ -41,18 +30,11 @@ Ensure consistent, authentic voice across all public content. Catch generic corp
 - "Results-oriented leader with proven track record"
 - Generic LinkedIn-speak that could be anyone
 
-### Profile Reflection
-
-After reviewing content, reflect back if there's a mismatch:
-> "Your profile says strategist, but your stories are heavy on shipping. Consider leaning into builder-strategist mix?"
-
-This is a suggestion, not a correction. The user decides.
-
 ## Review Checklist
 
 1. **Authenticity:** Does this sound like a real person or a resume?
 2. **Specificity:** Are there concrete details or just abstractions?
-3. **Action signal:** Does it show you DO things, not just talk? (Matches profile — builder ships, strategist decides, executor delivers, technical solves)
+3. **Action signal:** Does it show you DO things, not just talk? Who did what, and what changed?
 4. **Process visible:** Can reader learn from HOW you approached it?
 5. **Jargon check:** Any corporate speak that should be plain English?
 

@@ -18,7 +18,9 @@ Create a `CLAUDE.md` profile in the user's working folder that every other skill
 ### 1. Welcome + the map
 
 Greet the user and lay out the whole path so they're never lost:
-> "Welcome — I'll get you from raw material to portfolio content, no coding. The path: **setup** (now) → **find-my-voice** (so it sounds like you) → **content-strategist** (what to add) → **story-adapter** / **portfolio-copywriter** (create it) → **voice-guardian** → **quality-check** → publish in whatever builder you like → **refresh** (keep it current). You don't run all of them every time — I'll point you to the next step."
+> "Welcome — I'll get you from raw material to a live portfolio, no coding. The path: **setup** (a few basics, now) → **find-my-voice** (so it sounds like you) → **story-adapter** (turn work into safe case studies) → build and publish the page (just say "build my page") → **refresh** (keep it current). I'll point you to each next step."
+
+If the full kit is installed, also mention: **content-strategist** helps pick what to add, and **quality-check** is the final gate before publishing.
 
 ### 2. Gather identity and contact
 
@@ -78,7 +80,7 @@ The ledger (created later by story-adapter) holds the real, unredacted originals
 ### 5. Hand off
 
 Point to the next step explicitly:
-> "Setup done. Next: run **find-my-voice** so everything sounds like you. Then **content-strategist** helps decide what to add, **story-adapter** / **portfolio-copywriter** create it, and the rest of the kit polishes it — with **refresh** keeping it current."
+> "Setup done. Next: run **find-my-voice** so everything sounds like you — it hands you on to the next step from there. When you've got 2–3 case studies, say "build my page"."
 
 ## Rules
 

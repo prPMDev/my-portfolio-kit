@@ -1,6 +1,5 @@
 ---
 name: web-content-optimizer
-version: 1.0.0
 description: Optimize content for web delivery - SEO, readability, images, mobile UX, performance. Makes content perform well, not just read well.
 argument-hint: "[page or 'full-site']"
 allowed-tools: Read, Grep, Glob, Bash, Edit
@@ -39,115 +38,33 @@ Examples of grounded thinking:
 - "This feels slow/heavy"
 - "Does this work on mobile?"
 
-## Optimization Areas
+## Checklist
 
-### 1. SEO
+Only what matters for a small portfolio site (run per page):
 
-**On-Page:**
-- [ ] Title tag unique and descriptive (50-60 chars)
-- [ ] Meta description compelling with keywords (150-160 chars)
-- [ ] One H1 per page matching topic
-- [ ] Heading hierarchy logical (H1 → H2 → H3, no skips)
-- [ ] Keywords in first paragraph naturally
-- [ ] Internal links between related pages
+**Shared links & search** (someone Googles you or forwards your link)
+- [ ] `<title>` and meta description specific to you and unique per page, not template text
+- [ ] Open Graph tags (og:title, og:description, og:image, og:url) so shared links look right on LinkedIn/Slack
+- [ ] One H1; headings don't skip levels
 
-**Technical:**
-- [ ] Open Graph tags for social sharing (og:title, og:description, og:image, og:url)
-- [ ] Twitter card meta tags
-- [ ] Canonical URL if needed
-- [ ] sitemap.xml current (includes new pages)
-- [ ] robots.txt allows indexing
-- [ ] No duplicate content issues
+**Readability**
+- [ ] Who you are and what you do is clear in the first viewport, with a visible way to contact you
+- [ ] Short paragraphs, subheadings, bullets for lists; body text ≥16px with 4.5:1 contrast
 
-**Schema Markup (nice to have):**
-- Person schema for about/bio
-- Article schema for case studies
+**Mobile** (most referral clicks come from a phone)
+- [ ] Viewport meta present; no horizontal scroll at any width
+- [ ] Touch targets ≥44x44px; no hover-only interactions
+- [ ] Animations and carousels respect `prefers-reduced-motion`
 
-### 2. Readability
+**Images & weight**
+- [ ] Descriptive alt text per image; decorative images use `alt=""`
+- [ ] Images ~<100KB, sized for display, `loading="lazy"` below the fold
+- [ ] Whole page well under 1MB; JS deferred or at end of body
 
-**Scanability:**
-- [ ] Short paragraphs (3-4 sentences max)
-- [ ] Bullet points for lists of 3+ items
-- [ ] Bold key phrases (one per paragraph max)
-- [ ] Subheadings every 2-3 paragraphs
-- [ ] Front-load important info (inverted pyramid)
-
-**Sentence Structure:**
-- [ ] Average sentence length < 20 words
-- [ ] Mix short and long sentences
-- [ ] Active voice preferred
-- [ ] No jargon without explanation
-
-**Content Structure:**
-- [ ] Clear CTA above the fold
-- [ ] Most important content in first viewport
-- [ ] Logical flow (problem → solution → proof → CTA)
-
-### 3. Typography & Visual Hierarchy
-
-- [ ] Body text 16-18px minimum
-- [ ] Line height 1.5-1.7
-- [ ] Contrast ratio 4.5:1 minimum for text
-- [ ] Heading sizes create clear hierarchy
-- [ ] Max line length ~75 characters (prevents eye fatigue)
-- [ ] Consistent spacing (use CSS variables)
-
-### 4. Images
-
-**Optimization:**
-- [ ] Compress images (target < 100KB for most)
-- [ ] Use WebP format where supported (with fallback)
-- [ ] Size appropriately (don't serve 2000px image for 400px display)
-- [ ] Lazy load below-fold images (`loading="lazy"`)
-
-**Accessibility & SEO:**
-- [ ] Alt text descriptive and unique per image
-- [ ] Alt text includes keywords naturally (not stuffed)
-- [ ] Decorative images have empty alt (`alt=""`)
-
-**Process:**
 ```bash
-# Check image sizes
-find images/ -type f \( -name "*.png" -o -name "*.jpg" \) -size +100k
-
-# Convert to WebP (if tooling available)
-# cwebp image.png -o image.webp -q 80
+# Find oversized images
+find . -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.webp" \) -size +100k -not -path "./.git/*"
 ```
-
-### 5. Mobile & Responsive
-
-**Viewport:**
-- [ ] `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
-- [ ] No horizontal scroll at any breakpoint
-- [ ] Content readable without zooming
-
-**Touch:**
-- [ ] Touch targets minimum 44x44px
-- [ ] Adequate spacing between clickable elements
-- [ ] No hover-only interactions (have touch alternatives)
-
-**Content Adaptation:**
-- [ ] Important content not hidden on mobile
-- [ ] Images scale properly
-- [ ] Tables scroll horizontally or reflow
-- [ ] Modals/popups work on small screens
-
-**Timing:**
-- [ ] Carousels/auto-scroll slower on mobile (more reading time)
-- [ ] Animations respect `prefers-reduced-motion`
-
-### 6. Performance
-
-**Page Weight:**
-- [ ] Total page size < 1MB (ideally < 500KB)
-- [ ] No unused CSS/JS loaded
-- [ ] Fonts subset or use system fonts
-
-**Loading:**
-- [ ] Critical CSS inline or prioritized
-- [ ] JS deferred or at end of body
-- [ ] No render-blocking resources
-- [ ] External resources use preconnect hints (if critical)
 
 ## Output Format
 
@@ -198,7 +115,7 @@ Table format, graded, with what works and what doesn't.
 ## Process
 
 1. **Read** the page/content to review
-2. **Check** each optimization area
+2. **Run** the checklist
 3. **Prioritize** findings by impact
 4. **Report** with specific fixes
 5. **Handoff** to quality-check for final gate
@@ -208,4 +125,4 @@ Table format, graded, with what works and what doesn't.
 - **portfolio-copywriter** writes content → **web-content-optimizer** optimizes delivery
 - **voice-guardian** checks tone → **web-content-optimizer** checks structure/readability
 - **website-expert** handles code/design → **web-content-optimizer** handles content performance
-- **quality-check** is final gate → calls web-content-optimizer if optimization issues found
+- **quality-check** is the final gate → gates on this skill's grade

@@ -1,6 +1,5 @@
 ---
 name: content-strategist
-version: 1.0.0
 description: Entry point for adding portfolio content. Decides what goes where (portfolio, LinkedIn, article) and routes to appropriate skills.
 argument-hint: "[what you want to add]"
 allowed-tools: Read, Glob
@@ -37,12 +36,12 @@ Ask: "What content do you have or want to create?"
 ### 2. Check Source Material (CLAUDE.md)
 
 **First, check the Source Material section in CLAUDE.md for known sources:**
-- **Resume** — resume file path
+- **Résumé** — file path or pasted
+- **Writing samples** — posts, articles, etc.
 - **Notes** — notes/stories folder path
-- **LinkedIn** — LinkedIn export path or URL
 
 If sources exist:
-> "I see you have a resume at [path]. Want me to pull from that?"
+> "I see you have a résumé at [path]. Want me to pull from that?"
 
 If sources empty or "not provided":
 > "Where does this content live?"
@@ -56,31 +55,17 @@ If sources empty or "not provided":
 
 Pass source info to the downstream skill.
 
-### 3. Understand Where It Goes
+### 3. Route
 
 | Content Type | Destination | Route To |
 |--------------|-------------|----------|
-| Work achievements | Portfolio story | `/story-adapter` |
+| Work achievements (employment, consulting) | Portfolio story | `/story-adapter` (structures + anonymizes) |
 | Side project | Portfolio showcase | `/portfolio-copywriter` |
-| Hero/About copy | Portfolio | `/portfolio-copywriter` |
+| Hero/About/Contact copy | Portfolio | `/portfolio-copywriter` |
 | LinkedIn post | LinkedIn | `/portfolio-copywriter` (adapt for LinkedIn) |
 | Technical implementation | Code changes | `/website-expert` |
 
-### 3. Route
-
-Based on content type, hand off to appropriate skill:
-
-**Work content (employment, consulting):**
-> "This is work content. Using `/story-adapter` to structure and anonymize it."
-
-**Website copy (hero, about, contact):**
-> "Using `/portfolio-copywriter` to draft this section."
-
-**LinkedIn post:**
-> "Using `/portfolio-copywriter` to adapt this for LinkedIn format."
-
-**Technical changes:**
-> "Using `/website-expert` for implementation."
+Announce the handoff in one line, e.g. "This is work content. Using `/story-adapter` to structure and anonymize it."
 
 ## If User Has Nothing
 

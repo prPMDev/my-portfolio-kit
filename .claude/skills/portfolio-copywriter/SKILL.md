@@ -1,6 +1,5 @@
 ---
 name: portfolio-copywriter
-version: 1.0.0
 description: Write and improve portfolio website copy - hero, about, contact, project showcases. Focus on clarity, impact, and conversion.
 argument-hint: "[section to write/improve]"
 allowed-tools: Read, Grep, Glob, Edit, Write
@@ -18,8 +17,7 @@ Write and improve portfolio content. Focus on clarity, impact, and conversion. K
 
 **Check CLAUDE.md before asking:**
 - **Owner** / **Role** — identity already configured (top of CLAUDE.md)
-- **Resume** in Source Material section — may have positioning info
-- **LinkedIn** in Source Material section — may have summary/headline
+- **Résumé**, **Writing samples**, **Notes** in Source Material — positioning, headline, summary
 
 **If more context needed, ask:**
 - What do you specialize in?
@@ -80,43 +78,7 @@ Use CLAUDE.md as source of truth. Only ask what's missing.
 
 ## Process
 
-### Auto-Seed Mode (triggered by /setup)
-
-If called with sources from CLAUDE.md:
-
-1. **Read** resume → extract positioning, headline, key skills
-2. **Read** LinkedIn → extract summary, headline
-3. **Report findings** (found / partial / missing):
-   ```
-   ## Portfolio Copywriter: Extraction Report
-
-   | Element | Status | Found |
-   |---------|--------|-------|
-   | Name/Role | Found | "Alex Chen, Senior Engineer" |
-   | Headline | Partial | "Senior Engineer" (missing focus area) |
-   | Summary | Found | LinkedIn summary (3 sentences) |
-   | Key skills | Found | "distributed systems, Kafka, Go" |
-   | Personal narrative | Missing | No "why" or motivation in sources |
-
-   ### Draft (with gaps marked)
-
-   **Hero:**
-   "I'm Alex Chen, a Senior Engineer specializing in [NEED: focus].
-   I build [NEED: what you build that matters]."
-
-   **About:**
-   "[LinkedIn summary here]
-   [NEED: What drives you? Why this work?]"
-
-   ### Questions for gaps:
-   - "What do you specialize in?"
-   - "What drives you / why this work?"
-   ```
-4. **Return** report + partial drafts to /setup
-
-### Manual Mode (user invokes directly)
-
-1. **Check CLAUDE.md** for existing drafts and sources
+1. **Check CLAUDE.md** (Owner/Role, Source Material) and existing site files for current copy
 2. **Ask** what content needs writing/improving
 3. **Read** relevant files
 4. **Draft** content following principles above

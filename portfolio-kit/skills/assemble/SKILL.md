@@ -25,7 +25,7 @@ Show both for a quick confirm before rendering. If the user already has hero/abo
 
 ### 2. Load the bundled template
 
-Read `template/index.html` and `template/styles.css` from this plugin. These are the page; you populate slots, you do not restyle.
+Read `index.html` and `styles.css` at this plugin's root (three folders up from this skill's `portfolio-kit/skills/assemble/` folder). These are the page; you populate slots, you do not restyle.
 
 ### 3. Populate the slots
 
@@ -45,7 +45,7 @@ Convert markdown to simple HTML (`<p>`, `<h3>`, `<strong>`). Keep it to plain, s
 ### 4. Safety + completeness check (do not skip)
 
 - **No placeholders remain.** Search the output for `[`, `Your Name`, `yourhandle`, `your@email`, `Project Title`, `[Your`. If any survive, fix before writing.
-- **No setup-banner** (the bundled template has none — confirm).
+- **No setup-banner.** Delete the template's whole `<div id="setup-banner">…</div>` (a first-run hint for repo cloners, not portfolio content) — confirm `setup-banner` appears nowhere in the output.
 - **Ledger is law.** Cross-check against `ANONYMIZATION-LEDGER.md`: nothing marked "Masked" appears anywhere on the page, even if it's sitting in your context.
 
 ### 5. Write the files

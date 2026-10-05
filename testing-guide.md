@@ -53,7 +53,7 @@ claude
 | `claude: command not found` | Install Claude Code: `npm install -g @anthropic-ai/claude-code` |
 | `npm: command not found` | Install Node.js first from https://nodejs.org |
 | "Not authorized" or API error | Make sure you have Anthropic Pro ($20/month). Free plan doesn't include Claude Code |
-| Wrong folder | Run `ls` — you should see `CLAUDE.md.template`, `index.html`, `skills.json` |
+| Wrong folder | Run `ls` — you should see `index.html` and `README.md` |
 
 ---
 
@@ -74,7 +74,7 @@ This walks you through setting up your portfolio — name, contact info, positio
 |---------|-----|
 | `/setup` not recognized | Make sure you're inside the kit folder (should have `.claude/skills/` directory) |
 | Wizard asks something you're unsure about | It's OK to skip or give a rough answer — you can re-run `/setup` anytime |
-| CLAUDE.md wasn't created | Check that `CLAUDE.md.template` exists in the root folder |
+| CLAUDE.md wasn't created | Re-run `/setup` — it writes `CLAUDE.md` itself |
 
 ---
 
@@ -173,15 +173,15 @@ Before publishing, run the final gate:
 /quality-check
 ```
 
-This checks anonymization, voice, technical issues, and accessibility.
+This gates on the grades from `/voice-guardian` and `/web-content-optimizer`, and checks that the sensitivity scan ran on work content. Result: PASS, FAIL, or INCOMPLETE.
 
 **Potential challenges:**
 
 | Problem | Fix |
 |---------|-----|
-| Fails on anonymization | Review flagged items — decide what to anonymize or confirm it's OK to share |
-| Fails on accessibility | Usually quick fixes — alt text on images, heading order, contrast |
-| Too many warnings | Focus on errors first, warnings second. Some warnings are informational |
+| FAIL on a grade (C/D) | Run the named specialist (`/voice-guardian` or `/web-content-optimizer`), fix, then re-run `/quality-check` |
+| INCOMPLETE: sensitivity scan not run | Run `/story-adapter`'s scan or `/anonymizer` first |
+| Low `/web-content-optimizer` grade on accessibility | Usually quick fixes — alt text on images, heading order, contrast |
 
 ---
 
@@ -225,7 +225,7 @@ When you want to add new content or check for skill updates:
 /update
 ```
 
-This checks if new skills or improvements are available from the upstream kit.
+This compares your skills with the upstream kit and shows what changed. You decide what to apply.
 
 For new content, start back at Step 4 (`/content-strategist`).
 
@@ -233,56 +233,7 @@ For new content, start back at Step 4 (`/content-strategist`).
 
 | Problem | Fix |
 |---------|-----|
-| `/update` shows no changes | You're already up to date |
-| Merge conflicts | Tell Claude — it can help resolve them |
+| `/update` shows no changes | Your skills already match upstream |
+| A skill you customized shows as Changed | Pick/Skip to keep your version, or update it and accept the `SKILL.md.backup` so you can copy your tweaks back |
 | Want to add a new section | Start with `/content-strategist` — it decides where things go |
 
----
-
-## What You'll Learn Along the Way
-
-By the time you finish setting up and using the kit, you'll have picked up real skills — even if you came in with zero technical background.
-
-### 1. Working With AI as a Collaborator
-- You learn to **give AI structured instructions** (skills), not just open-ended prompts
-- You see how AI works best with **constraints and guardrails** — not "do anything"
-- You experience the difference between builder skills (create) and evaluator skills (review)
-- **Takeaway:** AI isn't magic — it's a tool that works better when you define the job clearly
-
-### 2. Git & Version Control Basics
-- Cloning a repo, making commits, pushing changes
-- Understanding branches (main vs gh-pages)
-- What a `.gitignore` does and why it matters
-- **Takeaway:** You can now contribute to any open source project or manage your own code
-
-### 3. Command Line Comfort
-- Navigating folders with `cd`, running commands
-- Reading output, spotting errors, trying again
-- **Takeaway:** The terminal stops being scary — it's just text-based clicking
-
-### 4. How Websites Actually Work
-- HTML = structure, CSS = styling, JS = behavior
-- What "static site" means (no server, no database)
-- How GitHub Pages turns a repo into a live website
-- **Takeaway:** You understand what's under the hood of every website you visit
-
-### 5. Data Separate From Design
-- Content lives in JSON files (`work.json`, `books.json`)
-- Templates pull from data — change the data, the site updates
-- **Takeaway:** This is how every modern app works (databases + templates)
-
-### 6. Content Strategy Thinking
-- The kit forces you to think about **what to show, what to skip**
-- Anonymization teaches you to convey impact without revealing specifics
-- Builder voice teaches you to say "I shipped X" not "I managed stakeholders"
-- **Takeaway:** You learn to write for an audience, not for yourself
-
-### 7. Professional Brand as a System
-- Portfolio as a hub that links to LinkedIn, GitHub, writing
-- Each piece has a job — the portfolio isn't a resume dump
-- **Takeaway:** You think about your professional presence as connected pieces, not one document
-
-### 8. Shipping & Iterating
-- B+ ships — you publish something real, then improve it
-- `/quality-check` before publish, `/update` to pull improvements later
-- **Takeaway:** You adopt a builder mindset — done is better than perfect, and v2 is always an option
