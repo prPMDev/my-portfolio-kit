@@ -29,8 +29,9 @@ Full setup guide: **[prpmdev.github.io/my-portfolio-kit](https://prpmdev.github.
 
 | Type | Skills |
 |------|--------|
-| **Builder** | `/setup`, `/content-strategist`, `/story-adapter`, `/anonymizer`, `/portfolio-copywriter`, `/website-expert`, `/update` |
+| **Builder** | `/setup`, `/find-my-voice`, `/content-strategist`, `/story-adapter`, `/portfolio-copywriter`, `/anonymizer`, `/website-expert`, `/refresh`, `/update` |
 | **Evaluator** | `/voice-guardian`, `/web-content-optimizer`, `/quality-check` |
+| **Meta** | `/skill-improver` |
 
 ## Keeping Skills Updated
 
