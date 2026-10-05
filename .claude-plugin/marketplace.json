@@ -1,6 +1,7 @@
 {
   "name": "portfolio-kit",
   "owner": { "name": "Prashant Rana" },
+  "description": "Home of the portfolio-kit plugin: Claude skills that turn your real work into portfolio content in your voice, and keep it current.",
   "plugins": [
     {
       "name": "portfolio-kit",
