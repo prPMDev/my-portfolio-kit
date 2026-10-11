@@ -1,6 +1,6 @@
 ---
 name: setup
-description: First-run setup for the portfolio kit. Gathers identity and contact, then points to the next step. Use when starting a new portfolio, "set up my portfolio", "get started", or the first time using this kit.
+description: First-run setup for the portfolio kit. Gathers identity and contact, then points to the next step. Use when starting a new portfolio, "set up my portfolio", "help me build my portfolio", "get started", or the first time using this kit.
 argument-hint: ""
 allowed-tools: Read, Write, Edit
 ---
@@ -24,14 +24,19 @@ If the full kit is installed, also mention: **content-strategist** helps pick wh
 
 ### 2. Gather identity and contact
 
+The portfolio needs its own folder. If this one already has a `CLAUDE.md` that isn't a portfolio profile, or looks like a code project, don't write anything here — ask them to open a new empty folder and run setup there, then stop.
+
+If `CLAUDE.md` is already a `# Portfolio Profile`, don't re-gather — say what's done, point to the first missing step (Voice Profile placeholder → **find-my-voice**; no `case-studies/` → **story-adapter**; otherwise "build my page" or **refresh**), and stop.
+
 Ask conversationally (use AskUserQuestion where it helps, but keep it light):
 - Name
 - What they do / role
 - Email
 - LinkedIn URL
 - GitHub or personal site (optional — skip if they don't have one; do not imply they should)
+- What they're looking for next (optional — roles, clients, collaborators)
 
-Never block on optional fields.
+Never block on optional fields. If they volunteer that something must never be named — or that an employer or client is fine to name — record it under **Privacy**, not in Role.
 
 ### 3. Ask for raw material
 
@@ -40,27 +45,35 @@ Ask: "Do you have anything I can work from?" and accept any of:
 - Things they've written (LinkedIn posts, a newsletter, talks, even emails) — flag these as **voice samples** for `find-my-voice`
 - Rough notes on projects or wins
 
+Save anything pasted to files so later sessions can use it — a later session can't see this chat: résumé → `source/resume.md`, writing → `source/writing-samples.md`, notes → `source/notes.md`. If they point to an existing file, record its path instead.
+
 If they have nothing, that's fine — say so and move on.
 
 ### 4. Write the profile
 
-Create or update `CLAUDE.md` in the working folder:
+Create `CLAUDE.md` in the working folder (if it's already a `# Portfolio Profile`, only fill empty fields — never overwrite Voice Profile, Hero, About, or Live site):
 
 ```
 # Portfolio Profile
 
 **Owner:** [name]
-**Role:** [role]
+**Role:** [job title and employer only — no notes; it becomes the page title]
+**Looking for:** [what's next, or "not specified"]
+**Live site:** not yet
 
 ## Contact
 - Email: [email]
-- LinkedIn: [url]
+- LinkedIn: [url or "none"]
 - Site/GitHub: [url or "none"]
 
 ## Source Material
-- Résumé: [path/pasted/none]
-- Writing samples: [list/none]
-- Notes: [path/none]
+- Résumé: [file path or "none"]
+- Writing samples: [file path or "none"]
+- Notes: [file path or "none"]
+
+## Privacy
+- Never name: [real names the user asked to keep private — names only, no stand-in wording — or "none"]
+- OK to name: [employers or clients the user said are fine to name, or "none"]
 
 ## Voice Profile
 - (not captured yet — run find-my-voice)
@@ -68,18 +81,20 @@ Create or update `CLAUDE.md` in the working folder:
 
 ### 4b. Protect private files
 
-Create or update `.gitignore` in the working folder so sensitive kit files are never committed or published:
+Create or update `.gitignore` in the working folder so private kit files are never committed:
 
 ```
 # portfolio-kit private files — never publish
 ANONYMIZATION-LEDGER.md
+CLAUDE.md
+source/
 ```
 
-The ledger (created later by story-adapter) holds the real, unredacted originals. Treat it like a password file — if a publish/deploy step is ever added, it must exclude this file too.
+The ledger (created later by story-adapter) holds the real, unredacted originals; `CLAUDE.md` and `source/` hold raw material. `.gitignore` only protects git — the page is built into a separate `site/` folder, and only that folder ever goes online.
 
 ### 5. Hand off
 
-Point to the next step explicitly:
+If another skill started setup (e.g. find-my-voice), skip this and go straight back to that skill. Otherwise, point to the next step explicitly:
 > "Setup done. Next: run **find-my-voice** so everything sounds like you — it hands you on to the next step from there. When you've got 2–3 case studies, say "build my page"."
 
 ## Rules

@@ -11,7 +11,7 @@ Turn messy work experience into a portfolio-ready case study that shows impact W
 
 ## Before you start
 
-Read `CLAUDE.md` for the **Voice Profile** and **Source Material**. If no voice profile exists, suggest running `find-my-voice` first — content without it will sound generic.
+If `CLAUDE.md` has no `# Portfolio Profile`, run `setup` first. Read `CLAUDE.md` for the **Voice Profile**, **Source Material** (read any saved files it lists, e.g. `source/resume.md`), and **Privacy** — anything under **Never name** is always removed or generalized. Read `ANONYMIZATION-LEDGER.md` if present: never mask anything that has a `Revealed` row. If no voice profile exists, suggest running `find-my-voice` first — content without it will sound generic.
 
 ## Process
 
@@ -33,10 +33,10 @@ Scan the structured story for anything risky and flag each with a recommendation
 
 | Looks like | Default move | Why |
 |---|---|---|
-| Employer name (on their LinkedIn) | Keep | Public employment is usually fine |
+| Employer name (on their LinkedIn or under **OK to name**, and not under **Never name**) | Keep | Public employment is usually fine |
 | Client name | Generalize ("a global retailer") | NDA risk unless public |
 | Internal codename / unreleased product | Remove | Not public |
-| Absolute metrics ($, users) tied to a named company | Convert to ratio ("4x", "exceeded target ~40%") | Protects confidential numbers |
+| Absolute metrics ($, users) tied to a named company or client | Convert to ratio ("4x", "exceeded target ~40%"); with no baseline, remove it and lead with the before/after result — never a dollar range ("seven figures") | Protects confidential numbers |
 | Colleague / manager / stakeholder names | Remove | Never publish people you didn't ask |
 | Internal-only details, negative specifics (layoffs, politics) | Remove | Burns bridges, adds no credibility |
 
@@ -44,13 +44,17 @@ Present findings as **recommendations the user can accept wholesale** — "here'
 
 **Never publish:** colleague names, NDA/unreleased info, proprietary methods, exact metrics tied to an identifiable company, client names without permission.
 
+If the user keeps something the defaults would hide ("keep the client, they're public"), log it in the ledger with Status `Revealed` and Reason "user approved" — so no later skill masks it again.
+
 ### 4. Apply voice + polish
 
 Rewrite in the user's voice profile. Show the process (how they approached it), not just outcomes — process is often more credible than numbers, and safer. One clear takeaway per story.
 
+Use only facts, numbers, and claims the user gave — never invent. If the process is missing, ask one question ("How did you go about it?"); if there's still nothing, keep the story short and say it can be expanded later.
+
 ### 4b. Log what you hid (anonymization ledger)
 
-For every item you masked, removed, or generalized, append a row to `ANONYMIZATION-LEDGER.md` in the working folder. Create it with this header if missing:
+For every item you masked, removed, or generalized, append a row to `ANONYMIZATION-LEDGER.md` in the working folder. Create it with this header the first time, even if nothing was masked:
 
 ```
 # Anonymization Ledger — PRIVATE, never publish
@@ -61,12 +65,23 @@ For every item you masked, removed, or generalized, append a row to `ANONYMIZATI
 |---|----------|-----------------|-------|--------|-------------|--------|
 ```
 
-Record the real original, what it became, where it appears, why, and the condition under which it could later be revealed (e.g. "when publicly announced"). Confirm it is listed in `.gitignore`. Never include this file in published output — it is the one file that, if leaked, undoes all the protection above.
+Record the real original, what it became, where it appears (the case-study file and section, e.g. `case-studies/checkout-redesign.md — Result`), why, and the condition under which it could later be revealed (e.g. "when publicly announced"). Set **Status** to `Masked`. Confirm it is listed in `.gitignore`. Never include this file in published output — it is the one file that, if leaked, undoes all the protection above.
 
-### 5. Output and loop
+### 5. Save and loop
 
-Deliver the finished case study. Then:
-> "Story added. Add another, or move on? When you've got 2–3, your portfolio's in good shape. Run **refresh** anytime you ship something new."
+Re-check the final draft — title and summary included — against the step-3 decisions, then show it for a quick confirm. Once the user approves, save it to `case-studies/<slug>.md` in the working folder — take the slug from the anonymized title, never from a client name or codename — in this shape:
+
+```
+# [Title — the result, in their voice]
+**Summary:** [1–2 sentences for the portfolio page]
+
+[Body — the STAR story]
+```
+
+Then:
+> "Saved to `case-studies/<slug>.md`. Add another, or move on? Say **"build my page"** whenever you're ready — 2–3 stories is the sweet spot."
+
+When running inside `refresh`, skip that closing line — refresh places the story itself.
 
 ## Tip
 

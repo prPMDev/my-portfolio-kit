@@ -17,9 +17,11 @@ Capture a rich, specific voice profile by analyzing what the user has actually w
 
 ### 1. Get samples (the default path)
 
-Ask for 2–3 things the user has written: LinkedIn posts, a newsletter, a talk transcript, a blog, even a few real emails. Read whatever they give (file, paste, or link).
+If `CLAUDE.md` has no `# Portfolio Profile`, run `setup` first. Then read `CLAUDE.md` → **Source Material**. If writing samples are saved (e.g. `source/writing-samples.md`), use them and ask for more only if there are fewer than 2 — and never if the user already said that's all they have. If it says "none", go straight to the fallback (unless they just gave you samples).
 
-If they truly have nothing written, use the **fallback** below.
+Otherwise ask for 2–3 things the user has written: LinkedIn posts, a newsletter, a talk transcript, a blog, even a few real emails. Read whatever they give (file, paste, or link), save pasted samples to `source/writing-samples.md`, and record that path in Source Material.
+
+If they truly have nothing written, use the **fallback** below. With only one short sample, also run the fallback interview.
 
 ### 2. Analyze for a specific fingerprint
 
@@ -44,7 +46,7 @@ Name the one real gap: their casual voice (newsletter, posts) may not be their *
 
 ### 5. Store a rich profile
 
-Write a detailed `## Voice Profile` into `CLAUDE.md` — not one word, a usable spec:
+Write a detailed `## Voice Profile` into `CLAUDE.md` — not one word, a usable spec. Keep client names, codenames, people, and figures out of it: pick sample lines and signature phrases that show the voice without them.
 
 ```
 ## Voice Profile
@@ -72,6 +74,8 @@ First run a short **voice interview** — extract from how they *speak*, since s
 - "What kind of writing makes you cringe?" (reveals what they avoid)
 
 Extract the same specific fingerprint from their answers — openings, rhythm, signature phrases, tone, what they avoid — reflect it back, and write the rich profile.
+
+Save their answers to `source/voice-interview.md` and list it under Source Material → Notes, so `story-adapter` can reuse any story they told. Anything they say is private or under NDA goes under Privacy → **Never name**.
 
 Use the archetypes below only as a last-resort nudge if they freeze, never as the answer:
 - **Builder** — "I noticed X was broken, so I built Y"
