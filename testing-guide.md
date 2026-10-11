@@ -219,13 +219,11 @@ Your site will be live at `https://YOUR-USERNAME.github.io/YOUR-REPO/`
 ## Step 10: Keep It Updated
 
 **What to do:**
-When you want to add new content or check for skill updates:
+To get the latest skills from the kit, run this in your terminal (not inside Claude):
 
+```bash
+git pull
 ```
-/update
-```
-
-This compares your skills with the upstream kit and shows what changed. You decide what to apply.
 
 For new content, start back at Step 4 (`/content-strategist`).
 
@@ -233,7 +231,8 @@ For new content, start back at Step 4 (`/content-strategist`).
 
 | Problem | Fix |
 |---------|-----|
-| `/update` shows no changes | Your skills already match upstream |
-| A skill you customized shows as Changed | Pick/Skip to keep your version, or update it and accept the `SKILL.md.backup` so you can copy your tweaks back |
+| `git pull` says "Already up to date" | Your skills already match the kit |
+| `git pull` reports a conflict in a skill you customized | Keep your version, take the kit's, or ask Claude to merge the two |
+| Downloaded the ZIP instead of cloning | Download the new ZIP and copy the `.claude/skills/` folder over yours |
 | Want to add a new section | Start with `/content-strategist` — it decides where things go |
 
