@@ -1,13 +1,13 @@
 ---
 name: story-adapter
-description: Turn raw work experience into anonymized, on-voice portfolio case studies. Built-in confidentiality and PII protection. Use for "add a project", "turn this into a case study", work stories, achievements, or any employment content.
+description: Turn raw work experience into on-voice portfolio case studies. Flags likely-confidential details (client names, colleagues, codenames, confidential numbers) and suggests safer wording. Use for "turn this into a case study", "add a case study to my portfolio", or a work story the user wants on their portfolio. Not for résumés, cover letters, performance reviews, or job applications.
 argument-hint: "[work story or achievement]"
 allowed-tools: Read, Write, Edit
 ---
 
 # Story Adapter
 
-Turn messy work experience into a portfolio-ready case study that shows impact WITHOUT leaking anything confidential — and that sounds like the user, not a résumé. Anonymization is built in, not a separate step.
+Turn messy work experience into a portfolio-ready case study that shows impact and sounds like the user, not a résumé. Along the way, flag likely-confidential details (client names, colleagues, codenames, confidential numbers) and suggest safer wording the user can accept or change. The sensitivity scan is built in, not a separate step.
 
 ## Before you start
 
@@ -40,7 +40,7 @@ Scan the structured story for anything risky and flag each with a recommendation
 | Colleague / manager / stakeholder names | Remove | Never publish people you didn't ask |
 | Internal-only details, negative specifics (layoffs, politics) | Remove | Burns bridges, adds no credibility |
 
-Present findings as **recommendations the user can accept wholesale** — "here's what I'd keep, generalize, and remove, and why; say 'apply all' or adjust any line." A non-expert should be able to accept the defaults and be safe without making a single call themselves. When in doubt, go safer — context can be added back later with approval.
+Present findings as **recommendations the user can accept wholesale** — "here's what I'd keep, generalize, and remove, and why; say 'apply all' or adjust any line." A non-expert should be able to accept the defaults and get the safer option without making a single call themselves. When in doubt, go safer — context can be added back later with approval.
 
 **Never publish:** colleague names, NDA/unreleased info, proprietary methods, exact metrics tied to an identifiable company, client names without permission.
 

@@ -1,13 +1,16 @@
 {
   "name": "portfolio-kit",
-  "version": "0.4.2",
-  "description": "Build a portfolio that stays alive. Extract your real voice from your own writing, turn work into anonymized case studies, and keep it current as you ship — all conversationally, no coding required.",
+  "displayName": "My Portfolio Kit",
+  "version": "0.4.3",
+  "description": "Build a portfolio that stays alive. Capture your voice from your own writing, turn your work into case studies that flag what you can't share, build a simple one-page site, and keep it current as you ship. No coding required.",
   "author": {
-    "name": "Prashant Rana"
+    "name": "Prashant Rana",
+    "url": "https://github.com/prPMDev"
   },
   "homepage": "https://prpmdev.github.io/my-portfolio-kit/",
+  "repository": "https://github.com/prPMDev/my-portfolio-kit",
   "license": "MIT",
-  "keywords": ["portfolio", "personal-brand", "writing", "career", "anonymization", "maintenance"],
+  "keywords": ["portfolio", "personal-website", "case-study", "personal-brand", "writing", "career", "job-search", "anonymization"],
   "skills": [
     "./.claude/skills/setup",
     "./.claude/skills/find-my-voice",

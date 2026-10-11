@@ -1,6 +1,6 @@
 ---
 name: assemble
-description: Assemble the approved portfolio content into one clean, openable index.html, then show how to publish it free with no terminal. Use for "build my page", "assemble my portfolio", "put it together", "make the site", "I'm ready to see it", or after stories are written.
+description: Build the approved portfolio content into a one-page site (index.html and styles.css in site/), then show how to publish it free with no terminal. Use for "build my page", "rebuild my page", "assemble my portfolio", or once portfolio case studies are approved. Not for other websites, web apps, or code projects.
 argument-hint: ""
 allowed-tools: Read, Write, Edit, Glob
 ---
@@ -62,7 +62,7 @@ Mention GitHub Pages only as a power-user option for people who already use git.
 
 ### 7. Hand off
 
-> "Once it's up, that's your portfolio, live — paste the URL and I'll note it. Whenever you ship something new or change roles, run **refresh** — it updates the page, keeps it on-voice and PII-safe, and tells you when to re-upload `site/`."
+> "Once it's up, that's your portfolio, live — paste the URL and I'll note it. Whenever you ship something new or change roles, run **refresh** — it updates the page, keeps it on-voice, flags likely-confidential details, and tells you when to re-upload `site/`."
 
 If they share the URL, save it in `CLAUDE.md` as `**Live site:** [url] ([host])`.
 

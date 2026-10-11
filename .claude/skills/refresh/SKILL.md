@@ -1,19 +1,19 @@
 ---
 name: refresh
-description: Keep an existing portfolio current. Add newly shipped work, update a changed role or fact, and re-check that everything stays on-voice and PII-safe. Use for "I shipped something new", "update my portfolio", "I changed jobs", "keep it current", or "refresh".
+description: Keep an existing portfolio current. Add newly shipped work, update a changed title or fact, and re-check voice and likely-confidential details. Use in a portfolio folder for "update my portfolio", "I shipped something new", "my title changed to", "I changed jobs", or when something on the portfolio should be revealed or taken down. Not for résumés, LinkedIn profiles, release notes, or changelogs.
 argument-hint: "[what's new or what changed]"
 allowed-tools: Read, Write, Edit, Grep
 ---
 
 # Refresh
 
-The reason this kit exists. Portfolios are cheap to build and expensive to keep true — people build one, host it, and let it rot. This skill keeps it alive: every time the user ships something, changes roles, or a fact moves, it folds the change in correctly, on-voice, and PII-safe.
+The reason this kit exists. Portfolios are cheap to build and expensive to keep true — people build one, host it, and let it rot. This skill keeps it alive: every time the user ships something, changes roles, or a fact moves, it folds the change in correctly and on-voice, and flags likely-confidential details.
 
 Use it as a recurring habit, not a one-time task.
 
 ## Before you start
 
-Read `CLAUDE.md` for **Voice Profile**, **Contact**, **Source Material**, and **Privacy**. Read the current portfolio content — the page (`site/index.html`) and the case studies (`case-studies/`) — so you know what already exists before changing anything. Also read `ANONYMIZATION-LEDGER.md` (if present) so you know exactly what was masked, where, and the original values — never rely on memory for this.
+If `CLAUDE.md` is missing or isn't a `# Portfolio Profile`, stop: this isn't a portfolio folder. Point the user to `setup` in a new, empty folder. Read `CLAUDE.md` for **Voice Profile**, **Contact**, **Source Material**, and **Privacy**. Read the current portfolio content — the page (`site/index.html`) and the case studies (`case-studies/`) — so you know what already exists before changing anything. Also read `ANONYMIZATION-LEDGER.md` (if present) so you know exactly what was masked, where, and the original values — never rely on memory for this.
 
 ## Process
 
@@ -43,7 +43,7 @@ Anything new or rewritten gets checked against the **Voice Profile** (sound like
 ### 5. Show the diff
 
 Summarize exactly what changed:
-> "Updated: added [project] to Work, changed title to [new], restored [client] name (now public per [source]). Voice: matched. PII: clean."
+> "Updated: added [project] to Work, changed title to [new], restored [client] name (now public per [source]). Voice: matched. PII: nothing flagged — skim it once before publishing."
 
 If the page changed and `CLAUDE.md` lists a **Live site**, add: "Re-upload the `site/` folder to [host] so the live page matches — on Netlify, use your site's Deploys tab so the URL stays the same." If it says "not yet", say the page in `site/` is ready to publish whenever they are — and if they've already put it online themselves, to re-upload `site/` so it matches (and share the URL so it's noted).
 

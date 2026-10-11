@@ -1,14 +1,14 @@
 {
   "name": "portfolio-kit",
-  "owner": { "name": "Prashant Rana" },
+  "owner": { "name": "Prashant Rana", "url": "https://github.com/prPMDev" },
   "description": "Home of the portfolio-kit plugin: Claude skills that turn your real work into portfolio content in your voice, and keep it current.",
   "plugins": [
     {
       "name": "portfolio-kit",
       "source": "./",
-      "description": "Build a portfolio that stays alive — extract your voice from your own writing, turn work into anonymized case studies, and keep it current as you ship. No coding required.",
-      "version": "0.4.2",
-      "keywords": ["portfolio", "personal-brand", "writing", "career", "anonymization", "maintenance"]
+      "description": "Build a portfolio that stays alive. Capture your voice from your own writing, turn your work into case studies that flag what you can't share, build a simple one-page site, and keep it current as you ship. No coding required.",
+      "version": "0.4.3",
+      "category": "productivity"
     }
   ]
 }

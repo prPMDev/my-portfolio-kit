@@ -1,6 +1,6 @@
 ---
 name: find-my-voice
-description: Discover and capture the user's authentic writing voice by extracting it from their actual writing — not picking from a menu. Use for "find my voice", "what's my voice", "make it sound like me", setting up a voice profile, or before writing any portfolio content.
+description: Capture the user's writing voice for their portfolio by extracting it from things they actually wrote, or a short interview if they have nothing. Use for "find my voice" (often with posts or samples they wrote), "what's my voice", "make my portfolio sound like me", setting up a voice profile, or before writing portfolio content. Not for general editing or matching a style outside the portfolio.
 argument-hint: "[writing samples or 'I have nothing written']"
 allowed-tools: Read, Write, Edit
 ---

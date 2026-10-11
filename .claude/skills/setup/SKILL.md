@@ -1,6 +1,6 @@
 ---
 name: setup
-description: First-run setup for the portfolio kit. Gathers identity and contact, then points to the next step. Use when starting a new portfolio, "set up my portfolio", "help me build my portfolio", "get started", or the first time using this kit.
+description: First-run setup for a personal portfolio built with this kit. Gathers name, role, contact, and anything already written, then points to the next step. Use for "help me build my portfolio", "set up my portfolio", "start a new portfolio", or the first time using this kit. Not for setting up code projects, repos, or other tools.
 argument-hint: ""
 allowed-tools: Read, Write, Edit
 ---
@@ -18,7 +18,7 @@ Create a `CLAUDE.md` profile in the user's working folder that every other skill
 ### 1. Welcome + the map
 
 Greet the user and lay out the whole path so they're never lost:
-> "Welcome — I'll get you from raw material to a live portfolio, no coding. The path: **setup** (a few basics, now) → **find-my-voice** (so it sounds like you) → **story-adapter** (turn work into safe case studies) → build and publish the page (just say "build my page") → **refresh** (keep it current). I'll point you to each next step."
+> "Welcome — I'll get you from raw material to a live portfolio, no coding. The path: **setup** (a few basics, now) → **find-my-voice** (so it sounds like you) → **story-adapter** (turn your work into case studies and flag what you may not be able to share) → build and publish the page (just say "build my page") → **refresh** (keep it current). I'll point you to each next step."
 
 If the full kit is installed, also mention: **content-strategist** helps pick what to add, and **quality-check** is the final gate before publishing.
 
